@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Dialog, Button } from "@blueprintjs/core";
-import {times} from "lodash";
-import {generateSequenceData} from "ve-sequence-utils";
+import { times } from "lodash";
+import { generateSequenceData } from "ve-sequence-utils";
 
 // import ab1ParsedGFPuv54 from "../../src/ToolBar/ab1ParsedGFPuv54.json";
 // import exampleAlignmentData from "../../src/ToolBar/ab1ParsedGFPuv58.json";
@@ -12,16 +12,18 @@ import {generateSequenceData} from "ve-sequence-utils";
 
 // import exampleSequenceData from './exampleData/simpleSequenceData';
 
-const exampleAlignmentData = {alignmentTracks: times(10).map(() => {
-  return {
-    sequenceData: {
-      ...generateSequenceData(10)
-    },
-    alignmentData: {
-      ...generateSequenceData(10)
+const exampleAlignmentData = {
+  alignmentTracks: times(10).map(() => {
+    return {
+      sequenceData: {
+        ...generateSequenceData(10)
+      },
+      alignmentData: {
+        ...generateSequenceData(10)
+      }
     }
-  }
-})}
+  })
+}
 
 export default class StandaloneAlignmentDemo extends React.Component {
   state = {
@@ -50,10 +52,10 @@ export default class StandaloneAlignmentDemo extends React.Component {
         };
       }
     });
-    
-    setTimeout(()=>{
-      console.info('alignment.getState():',alignment.getState())
-    },10000)
+
+    setTimeout(() => {
+      console.info('alignment.getState():', alignment.getState())
+    }, 10000)
   };
   componentDidMount() {
     this.mountEditor();
@@ -75,15 +77,15 @@ export default class StandaloneAlignmentDemo extends React.Component {
     const { isDialogOpen } = this.state;
     return (
       <div>
-        <Button
+        {/* <Button
           onClick={() => {
             this.setState({ isDialogOpen: !isDialogOpen });
             this.mountEditor();
           }}
         >
           Open in a dialog
-        </Button>
-        {isDialogOpen ? (
+        </Button> */}
+        {/* {isDialogOpen ? (
           <Dialog
             style={{ width: 600 }}
             onClose={() => {
@@ -97,8 +99,8 @@ export default class StandaloneAlignmentDemo extends React.Component {
             {inner}
           </Dialog>
         ) : (
-          inner
-        )}
+            inner
+          )} */}
       </div>
     );
   }

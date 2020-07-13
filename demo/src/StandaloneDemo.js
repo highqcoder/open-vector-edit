@@ -13,7 +13,7 @@ import alignmentDataPairwise from "./exampleData/alignmentDataPairwise.json";
 // import exampleSequenceData from './exampleData/simpleSequenceData';
 
 connect(
-  (/* state, ownProps */) => {},
+  (/* state, ownProps */) => { },
   dispatch => {
     dispatch();
   }
@@ -48,10 +48,10 @@ export default class StandaloneDemo extends React.Component {
           // handleFullscreenClose: () => { //comment this function in to make the editor fullscreen by default
           //   editor.close() //this calls reactDom.unmountComponent at the node you passed as the first arg
           // },
-          onRename: () => {}, //this option should be shown by default
-          onNew: () => {}, //unless this callback is defined, don't show the option to create a new seq
-          onDuplicate: () => {}, //unless this callback is defined, don't show the option to create a new seq
-          onSave: function(
+          onRename: () => { }, //this option should be shown by default
+          onNew: () => { }, //unless this callback is defined, don't show the option to create a new seq
+          onDuplicate: () => { }, //unless this callback is defined, don't show the option to create a new seq
+          onSave: function (
             opts = {},
             sequenceDataToSave,
             editorState,
@@ -69,7 +69,7 @@ export default class StandaloneDemo extends React.Component {
           onDelete: data => {
             console.warn("would delete", data);
           },
-          onCopy: function(event, copiedSequenceData /* , editorState */) {
+          onCopy: function (event, copiedSequenceData /* , editorState */) {
             //the copiedSequenceData is the subset of the sequence that has been copied in the teselagen sequence format
             const clipboardData = event.clipboardData;
             clipboardData.setData("text/plain", copiedSequenceData.sequence);
@@ -82,7 +82,7 @@ export default class StandaloneDemo extends React.Component {
             //in onPaste in your app you can do:
             // e.clipboardData.getData('application/json')
           },
-          onPaste: function(event /* , editorState */) {
+          onPaste: function (event /* , editorState */) {
             //the onPaste here must return sequenceData in the teselagen data format
             const clipboardData = event.clipboardData;
             let jsonData = clipboardData.getData("application/json");
@@ -115,22 +115,22 @@ export default class StandaloneDemo extends React.Component {
               };
             }
           },
-          getVersionList: () => {
-            return [
-              {
-                dateChanged: "12/30/2211",
-                editedBy: "Nara",
-                // revisionType: "Sequence Deletion",
-                versionId: 2
-              },
-              {
-                dateChanged: "8/30/2211",
-                editedBy: "Ralph",
-                // revisionType: "Feature Edit",
-                versionId: 3
-              }
-            ];
-          },
+          // getVersionList: () => {
+          //   return [
+          //     {
+          //       dateChanged: "12/30/2211",
+          //       editedBy: "Nara",
+          //       // revisionType: "Sequence Deletion",
+          //       versionId: 2
+          //     },
+          //     {
+          //       dateChanged: "8/30/2211",
+          //       editedBy: "Ralph",
+          //       // revisionType: "Feature Edit",
+          //       versionId: 3
+          //     }
+          //   ];
+          // },
           showMenuBar: true,
           PropertiesProps: {
             propertiesList: [
@@ -506,30 +506,7 @@ export default class StandaloneDemo extends React.Component {
     const { isDialogOpen } = this.state;
     return (
       <div style={{ flexGrow: "1", display: "flex", flexDirection: "column" }}>
-        <Button
-          onClick={() => {
-            this.setState({ isDialogOpen: !isDialogOpen });
-            this.mountEditor();
-          }}
-        >
-          Open in a dialog
-        </Button>
-        {isDialogOpen ? (
-          <Dialog
-            style={{ width: 600 }}
-            onClose={() => {
-              this.setState({ isDialogOpen: false });
-              this.mountEditor();
-            }}
-            backdropProps={{ style: { zIndex: 1050 } }}
-            title="yooo"
-            isOpen={isDialogOpen}
-          >
-            {inner}
-          </Dialog>
-        ) : (
-          inner
-        )}
+        {inner}
       </div>
     );
   }

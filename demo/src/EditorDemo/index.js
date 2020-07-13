@@ -236,9 +236,9 @@ export default class EditorDemo extends React.Component {
     const dropTarget = document.querySelector(".veTabProperties")
           dragMock.dragStart(dragSource).dragEnter(dropTarget).dragOver(dropTarget).delay(500).dragEnd()
         }}>click me!</button> */}
-        <div style={{ width: 250 }}>
+        {/* <div style={{ width: 250 }}>
           {renderToggle({ that: this, type: "showDemoOptions" })}
-        </div>
+        </div> */}
 
         <div
           style={{
@@ -249,7 +249,7 @@ export default class EditorDemo extends React.Component {
             minHeight: 0
           }}
         >
-          {this.state.showDemoOptions && (
+          {/* {this.state.showDemoOptions && (
             <div
               data-test="optionContainer"
               style={{
@@ -269,15 +269,15 @@ export default class EditorDemo extends React.Component {
                 borderRight: "1px solid lightgrey"
               }}
             >
-              <Button
+              {/* <Button
                 icon="refresh"
                 style={{ marginLeft: 10, marginRight: 10 }}
                 onClick={this.resetDefaultState}
               >
                 Reset Demo Defaults
-              </Button>
+              </Button> */}
 
-              {renderToggle({
+              {/* {renderToggle({
                 info: `
 You can change the sequence in a given <Editor/> by calling: 
 \`\`\`js
@@ -1117,7 +1117,7 @@ This feature requires beforeSequenceInsertOrDelete toggle to be true to be enabl
               <br />
               <br />
             </div>
-          )}
+          )} */}
           {/* <div
             style={{
               display: "flex",
@@ -1131,10 +1131,9 @@ This feature requires beforeSequenceInsertOrDelete toggle to be true to be enabl
               myCustomTab: MyCustomTab
             }}
             style={{
-              // display: "flex",
-              // flexDirection: "column",
-              // flexGrow: 1,
-              ...(this.state.showDemoOptions && { paddingLeft: 250 })
+              display: "flex",
+              flexGrow: 1,
+              // ...(this.state.showDemoOptions && { paddingLeft: 250 })
             }}
             {...(this.state.readOnly && { readOnly: true })}
             editorName="DemoEditor"
