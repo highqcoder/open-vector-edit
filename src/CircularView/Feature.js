@@ -44,7 +44,7 @@ export default function Feature({
       className="veFeature veCircularViewFeature"
       strokeWidth=".5"
       stroke="black"
-      fill={color}
+      fill={`url(#${color})`}
       d={path.print()}
     />
   );

@@ -215,6 +215,7 @@ function drawAnnotations({
       <g
         className={"veAnnotations-" + annotationType}
         key={"veAnnotations-" + annotationType}
+        fill="#7dbcff"
       >
         {svgGroup}
       </g>
@@ -257,53 +258,68 @@ const DrawAnnotation = withHover(function ({
     onMouseOver
   };
   const title = <title>{titleText}</title>;
+  let annotationColorDec = []
+  let gradientColorHex = []
+  for (let i = 0; i < 3; i++) {
+    annotationColorDec[i] = parseInt(annotationColor.slice(i * 2 + 1, i * 2 + 3), 16) * 10 / 6
+    if(annotationColorDec[i] > 255)
+    annotationColorDec[i] = 255
+  }
+  console.log(annotationColorDec)
   return (
-    <React.Fragment>
-      <g
-        {...PositionAnnotationOnCircle({
-          sAngle: startAngle,
-          eAngle: endAngle,
-          forward: reverseAnnotations ? !annotation.forward : annotation.forward
-        })}
-        {...sharedProps}
-      >
-        {title}
-        <Annotation
-          {...(locationAngles &&
-            locationAngles.length && { containsLocations: true })}
-          totalAngle={totalAngle}
-          color={annotationColor}
-          isProtein={isProtein}
-          radius={annotationRadius}
-          annotationHeight={annotationHeight}
-          {...annotationProps}
-        />
-      </g>
+  <React.Fragment>
+    <defs>
+      <linearGradient id={annotationColor} x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style={{ "stop-color": `${annotationColor}`, "stop-opacity": 1 }} />
+
+        <stop offset="100%" style={{ "stop-color": `rgb(${annotationColorDec[0]},${annotationColorDec[1]},${annotationColorDec[2]})`, "stop-opacity": 1 }} />
+      </linearGradient>
+    </defs>
+    <g
+      {...PositionAnnotationOnCircle({
+        sAngle: startAngle,
+        eAngle: endAngle,
+        forward: reverseAnnotations ? !annotation.forward : annotation.forward
+      })}
+      {...sharedProps}
+    >
+      {title}
+      <Annotation
+        {...(locationAngles &&
+          locationAngles.length && { containsLocations: true })}
+        totalAngle={totalAngle}
+        color={annotationColor}
+        isProtein={isProtein}
+        radius={annotationRadius}
+        annotationHeight={annotationHeight}
+        {...annotationProps}
+      />
+    </g>
       );
-      {locationAngles &&
-        locationAngles.map(({ startAngle, endAngle, totalAngle }, i) => {
-          return (
-            <g
-              key={"location--" + annotation.id + "--" + i}
-              {...PositionAnnotationOnCircle({
-                sAngle: startAngle,
-                eAngle: endAngle,
-                forward: reverseAnnotations
-                  ? !annotation.forward
-                  : annotation.forward
-              })}
-              {...sharedProps}
-            >
-              {title}
-              <Annotation
-                totalAngle={totalAngle}
-                color={annotationColor}
-                radius={annotationRadius}
-                annotationHeight={annotationHeight}
-              />
-            </g>
-          );
-        })}
-    </React.Fragment>
-  );
+    {locationAngles &&
+      locationAngles.map(({ startAngle, endAngle, totalAngle }, i) => {
+        return (
+          <g
+            key={"location--" + annotation.id + "--" + i}
+            {...PositionAnnotationOnCircle({
+              sAngle: startAngle,
+              eAngle: endAngle,
+              forward: reverseAnnotations
+                ? !annotation.forward
+                : annotation.forward
+            })}
+            {...sharedProps}
+          >
+            {title}
+            <Annotation
+              totalAngle={totalAngle}
+              color={annotationColor}
+              radius={annotationRadius}
+              annotationHeight={annotationHeight}
+            />
+          </g>
+        );
+      })}
+  </React.Fragment>
+);
 });
