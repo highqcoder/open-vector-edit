@@ -810,7 +810,8 @@ export class Editor extends React.Component {
             position: "relative",
             flexGrow: "1",
             minHeight: 0,
-            display: "flex"
+            display: "flex",
+            backgroundColor: "#eef1fa"
           }}
           className="tg-editor-container"
           id="section-to-print"

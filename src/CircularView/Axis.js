@@ -71,19 +71,28 @@ function Axis({
     : null;
   let component = (
     <g key="veAxis" className="veAxis">
+      <defs>
+        <filter id="f1" x="0" y="0" width="200%" height="200%">
+          <feOffset result="offOut" in="SourceGraphic" dx="5" dy="10" />
+          <feColorMatrix result = "matrixOut" in = "offOut" type = "matrix" values = "0.5 0 0 0 0 0 0.4 0 0 0 0 0 0.6 0 0 0 0 0 0.3 0"/>
+          <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+          <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+      </defs>
       <circle
+        filter="url(#f1)"
         className="veAxisFill"
         id="circularViewAxis"
         key="circleOuter"
         r={radiusToUse + ringThickness}
-        style={{ fill: "white", stroke: "black", strokeWidth: 0.5 }}
+        style={{ fill: "#f6f6fa", strokeWidth: 5 }}
       />
-      <circle
+      {/* <circle
         id="circularViewAxis"
         key="circle"
         r={radiusToUse}
         style={{ fill: "white", stroke: "black", strokeWidth: 0.5 }}
-      />
+      /> */}
       {tickMarksAndLabels}
     </g>
   );

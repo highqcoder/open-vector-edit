@@ -46,14 +46,14 @@ function Caret({
         y2={-outerRadius}
         // stroke="black"
       />
-      {isSelection ? (
+      {/* {isSelection ? (
         <polygon
           className="vePolygonCaretHandle"
           fill="black"
           points={`0,${-outerRadius + 2} 5,${-outerRadius -
             10} -5,${-outerRadius - 10}`}
         />
-      ) : null}
+      ) : null} */}
     </g>
   );
 }

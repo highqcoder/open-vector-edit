@@ -36,13 +36,13 @@ class OveMenuBar extends React.Component {
     return (
       <div
         className="veMenuBarContainer"
-        style={{ display: "flex" /* height: "100%" */ }}
+        style={{ display: "flex"/* height: "100%" */ }}
       >
         <MenuBar
           menu={this.getFilteredMenu(menuFilter, menuDef)}
           enhancers={this.enhancers}
         />
-        {/* <div
+        <div
           className="menuBarDivider"
           style={{
             height: "87%",
@@ -50,7 +50,7 @@ class OveMenuBar extends React.Component {
             margin: 2,
             background: "lightgrey"
           }}
-        /> */}
+        />
       </div>
     );
   }

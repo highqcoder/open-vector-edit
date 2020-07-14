@@ -129,27 +129,18 @@ export class ToolBar extends React.PureComponent {
               ? {
                   display: "flex",
                   width: "100%",
-                  flexDirection: "column",
+                  // flexDirection: "column",
                   alignItems: "flex-start"
                 }
               : {
                   display: "flex",
                   width: "100%",
-                  justifyContent: "center",
+                  // justifyContent: "center",
                   flexWrap: "wrap"
                 })
           }}
           className="veToolbar"
         >
-          {showMenuBar && (
-            <MenuBar
-              openHotkeyDialog={openHotkeyDialog}
-              {...pick(this.props, userDefinedHandlersAndOpts)}
-              onSave={onSave} //needs to be passed so that editor commands will have it
-              style={{ marginLeft: 0 }}
-              editorName={editorName}
-            />
-          )}
           {displayMenuBarAboveTools && showMenuBar ? (
             <div
               className="veTools-displayMenuBarAboveTools"
@@ -166,6 +157,21 @@ export class ToolBar extends React.PureComponent {
           ) : (
             items
           )}
+          <div
+            style = {{
+              float:'right'
+            }}
+          >
+            {showMenuBar && (
+              <MenuBar
+                openHotkeyDialog={openHotkeyDialog}
+                {...pick(this.props, userDefinedHandlersAndOpts)}
+                onSave={onSave} //needs to be passed so that editor commands will have it
+                style={{ marginLeft: 0 }}
+                editorName={editorName}
+              />
+            )}
+          </div>
         </div>
         {closeFullscreen && (
           <CloseFullscreenButton onClick={handleFullscreenClose} />
