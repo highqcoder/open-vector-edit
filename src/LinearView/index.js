@@ -125,11 +125,8 @@ export class LinearView extends React.Component {
         <div
           ref={(ref) => (this.linearView = ref)}
           className="veLinearView"
-          style={{
-            width,
-            ...(height && { height }),
-            paddingLeft: marginWidth / 2,
-            ...(paddingBottom && { paddingBottom })
+          style = {{
+            
           }}
           onContextMenu={(event) => {
             this.getNearestCursorPositionToMouseEvent(
@@ -196,9 +193,8 @@ export class LinearView extends React.Component {
 function SequenceName({ sequenceName, sequenceLength, isProtein }) {
   return (
     <div key="circViewSvgCenterText" style={{ textAlign: "center" }}>
-      <span>{sequenceName} </span>
-      <br />
-      <span>
+      <span style = {{fontSize:"20px"}}>{sequenceName && "exported"} </span>
+      <span style = {{color:"red"}}>
         {isProtein
           ? `${Math.floor(sequenceLength / 3)} AAs`
           : `${sequenceLength} bps`}

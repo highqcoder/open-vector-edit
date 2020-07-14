@@ -92,17 +92,17 @@ function DeletionLayers(props) {
                         x="0"
                         y="0"
                         height={deletionLineHeight}
-                        width={4}
+                        width={40}
                       />
                     )}
                   {rangeSpansSequence &&
                     deletionEnd && (
                       <rect
                         fill={"blue"}
-                        x={width - 4}
+                        x={width - 40}
                         y="0"
                         height={deletionLineHeight}
-                        width={4}
+                        width={40}
                       />
                     )}
                 </g>

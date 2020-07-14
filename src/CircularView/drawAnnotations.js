@@ -259,17 +259,16 @@ const DrawAnnotation = withHover(function ({
   };
   const title = <title>{titleText}</title>;
   let annotationColorDec = []
-  let gradientColorHex = []
   for (let i = 0; i < 3; i++) {
     annotationColorDec[i] = parseInt(annotationColor.slice(i * 2 + 1, i * 2 + 3), 16) * 10 / 6
     if(annotationColorDec[i] > 255)
     annotationColorDec[i] = 255
   }
-  console.log(annotationColorDec)
+  console.log(annotationColor)
   return (
   <React.Fragment>
     <defs>
-      <linearGradient id={annotationColor} x1="0%" y1="0%" x2="0%" y2="100%">
+      <linearGradient id={annotationColor} x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style={{ "stop-color": `${annotationColor}`, "stop-opacity": 1 }} />
 
         <stop offset="100%" style={{ "stop-color": `rgb(${annotationColorDec[0]},${annotationColorDec[1]},${annotationColorDec[2]})`, "stop-opacity": 1 }} />

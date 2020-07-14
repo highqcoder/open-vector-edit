@@ -69,7 +69,12 @@ function StackedAnnotations(props) {
       top += annotationHeight / 2 - annotationHeight / 16;
     }
     const anotationHeightNoSpace = annotationHeight - spaceBetweenAnnotations;
-
+    let annotationColorDec = []
+    for (let i = 0; i < 3; i++) {
+      annotationColorDec[i] = parseInt(annotationColor.slice(i * 2 + 1, i * 2 + 3), 16) * 10 / 6
+      if(annotationColorDec[i] > 255)
+      annotationColorDec[i] = 255
+    }
     annotationsSVG.push(
       <AnnotationPositioner
         height={anotationHeightNoSpace}
@@ -78,6 +83,12 @@ function StackedAnnotations(props) {
         top={top}
         left={result.xStart}
       >
+        <defs>
+          <linearGradient id={annotationColor} x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style={{ "stop-color": `${annotationColor}`, "stop-opacity": 1 }} />
+            <stop offset="100%" style={{ "stop-color": `rgb(${annotationColorDec[0]},${annotationColorDec[1]},${annotationColorDec[2]})`, "stop-opacity": 1 }} />
+          </linearGradient>
+        </defs>
         <InnerCompToUse
           externalLabels={externalLabels}
           key={index}

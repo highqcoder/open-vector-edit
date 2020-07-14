@@ -65,21 +65,21 @@ describe("editor", function() {
     cy.contains(".ve-row-item-sequence", /^ctagtcttatg/);
   });
   it("should be able to change the color of features by changing the feature type", () => {
-    cy.contains(".veRowViewFeature", "araD").find(`path[fill="#006FEF"]`);
+    cy.contains(".veRowViewFeature", "araD").find(`path[fill="#650dff"]`);
     cy.contains(".veLabelText", "araD").rightclick();
     cy.contains(".bp3-menu-item", "Edit Feature").click();
     cy.get(".tg-test-type input").click();
     cy.contains(".tg-select-option", "3'UTR").click();
     cy.contains(".bp3-dialog button", "Save").click();
     cy.contains(".veRowViewFeature", "araD")
-      .find(`path[fill="#006FEF"]`)
+      .find(`path[fill="#650dff"]`)
       .should("not.exist");
   });
   it("should be able to edit a feature/part via double clicking", () => {
     cy.contains(".veRowViewPart", "Part 0").dblclick();
     cy.get(".tg-test-name input").should("have.value", "Part 0");
     cy.get(".bp3-dialog-close-button").click();
-    cy.contains(".veRowViewFeature", "araD").find(`path[fill="#006FEF"]`);
+    cy.contains(".veRowViewFeature", "araD").find(`path[fill="#650dff"]`);
     cy.contains(".veLabelText", "araD").dblclick();
     cy.get(".tg-test-name input").should("have.value", "araD");
     cy.get(".bp3-dialog-close-button").click();

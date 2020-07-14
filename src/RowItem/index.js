@@ -131,9 +131,13 @@ export class RowItem extends React.PureComponent {
       charWidth = width / Math.max(bpsPerRow, 1);
     }
     let rowContainerStyle = {
+      marginLeft: "10px",
       position: "relative",
       minHeight,
-      width: width + "px"
+      width: width + "px",
+      paddidng: "20px",
+      backgroundColor : "white",
+      borderRadius: "20px"
     };
     let getGaps = () => ({
       gapsBefore: 0,
@@ -218,18 +222,18 @@ export class RowItem extends React.PureComponent {
       }
       const CompToUse = CompOverride || StackedAnnotations;
       return (
-        <CompToUse
-          externalLabels={externalLabels === "true"}
-          onlyShowLabelsThatDoNotFit={onlyShowLabelsThatDoNotFit}
-          type={type}
-          containerClassName={camelCase(
-            "veRowView-" + pluralType + "Container"
-          )}
-          alignmentType={alignmentType}
-          {...annotationCommonProps}
-          {...getPropsForType(this.props, type, pluralType)}
-          {...otherExtraProps}
-        />
+          <CompToUse
+            externalLabels={externalLabels === "true"}
+            onlyShowLabelsThatDoNotFit={onlyShowLabelsThatDoNotFit}
+            type={type}
+            containerClassName={camelCase(
+              "veRowView-" + pluralType + "Container"
+            )}
+            alignmentType={alignmentType}
+            {...annotationCommonProps}
+            {...getPropsForType(this.props, type, pluralType)}
+            {...otherExtraProps}
+          />
       );
     };
 
@@ -333,36 +337,6 @@ export class RowItem extends React.PureComponent {
             }
             regions={selectionLayers}
           />
-          {/* <Labels
-            {...annotationCommonProps}
-            annotationRanges={[
-              ...(showCutsiteLabels && showCutsites
-                ? map(cutsites, a =>
-                    assign(a, {
-                      onClick: cutsiteClicked,
-                      onRightClick: cutsiteRightClicked
-                    })
-                  )
-                : []),
-              ...(showFeatureLabels && showFeatures && externalLabels
-                ? map(features, a =>
-                    assign(a, {
-                      onClick: featureClicked,
-                      onRightClick: featureRightClicked
-                    })
-                  )
-                : []),
-              ...(showPartLabels && showParts && externalLabels
-                ? map(parts, a =>
-                    assign(a, {
-                      onClick: partClicked,
-                      onRightClick: partRightClicked
-                    })
-                  )
-                : [])
-            ]}
-            annotationHeight={cutsiteLabelHeight}
-          /> */}
           {drawAnnotations("warning")}
           {drawAnnotations("assemblyPiece")}
           {drawAnnotations("lineageAnnotation")}
@@ -579,7 +553,7 @@ export class RowItem extends React.PureComponent {
                       });
                     }}
                     className="rowViewTextContainer clickable"
-                    width={Math.max(0, Number(width))}
+                    width={Math.max(0, Number(width-10))}
                     height={Math.max(0, Number(height))}
                   >
                     <polyline
@@ -591,8 +565,6 @@ export class RowItem extends React.PureComponent {
                         height + bufferBottom
                       } ${-bufferLeft},0`}
                       fill="none"
-                      stroke="black"
-                      strokeWidth="2px"
                     />
                   </svg>
                 </Sequence>

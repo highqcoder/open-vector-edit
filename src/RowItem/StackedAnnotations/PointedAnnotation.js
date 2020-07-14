@@ -36,7 +36,7 @@ class PointedAnnotation extends React.PureComponent {
       onlyShowLabelsThatDoNotFit
     } = this.props;
 
-    let width = (widthInBps + gapsInside) * charWidth;
+    let width = ((widthInBps + gapsInside) * charWidth) ;
     let charWN = charWidth; //charWN is normalized
     if (charWidth < 15) {
       //allow the arrow width to adapt
@@ -121,12 +121,13 @@ class PointedAnnotation extends React.PureComponent {
           onRightClick({ annotation, event, gapsBefore, gapsInside });
         }}
       >
+
         <title>{getAnnotationNameAndStartStopString(annotation)}</title>
         <path
           strokeWidth="1"
-          stroke={stroke || "black"}
+          // stroke={stroke || "black"}
           opacity={opacity}
-          fill={fill || color}
+          fill={`url(#${color})`}
           transform={forward ? null : "translate(" + width + ",0) scale(-1,1) "}
           d={path}
         />
