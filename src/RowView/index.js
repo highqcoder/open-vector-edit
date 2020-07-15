@@ -319,7 +319,7 @@ export class RowView extends React.Component {
       if (index === 0) {
         rowTopComp = (
           <div style={rowJumpButtonStyle}>
-            <Button
+            {/* <Button
               data-test="jumpToEndButton"
               onClick={e => {
                 e.stopPropagation();
@@ -328,7 +328,7 @@ export class RowView extends React.Component {
               }}
             >
               Jump to end
-            </Button>
+            </Button> */}
           </div>
         );
       } else if (index === rowData.length - 1) {

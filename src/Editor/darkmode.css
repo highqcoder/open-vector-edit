@@ -1,6 +1,6 @@
 .bp3-dark #circularViewAxis:not(.veAxisFill) {
   fill: #070714 !important;
-  stroke: #f5f8fa !important;
+  /* stroke: #f5f8fa !important; */
 }
 
 .bp3-dark .veEditor {
@@ -18,7 +18,7 @@
 .bp3-dark .veLabelLine,
 .bp3-dark .veFeature,
 .bp3-dark .vePart {
-  stroke: #f5f8fa !important;
+  /* stroke: #f5f8fa !important; */
 }
 
 .bp3-dark .veEditor .veRowViewCaret {

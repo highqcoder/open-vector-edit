@@ -103,7 +103,7 @@ export class ToolBar extends React.PureComponent {
         if (!Tool) {
           console.error(
             "You're trying to load a tool that doesn't appear to exist: " +
-              toolName
+            toolName
           );
           return false;
         }
@@ -135,6 +135,12 @@ export class ToolBar extends React.PureComponent {
       items = modifyTools(items);
     }
 
+    let modeBackground = "#f5f6fc"
+    let moonColor = "gray"
+    if(this.state.darkMode) {
+      modeBackground = "#25234f"
+      moonColor = "yellow"
+    }
     return (
       <div style={{ display: "flex" }}>
         {contentLeft}
@@ -142,17 +148,17 @@ export class ToolBar extends React.PureComponent {
           style={{
             ...(displayMenuBarAboveTools && showMenuBar
               ? {
-                  display: "flex",
-                  width: "100%",
-                  // flexDirection: "column",
-                  alignItems: "flex-start"
-                }
+                display: "flex",
+                width: "100%",
+                // flexDirection: "column",
+                alignItems: "flex-start"
+              }
               : {
-                  display: "flex",
-                  width: "100%",
-                  // justifyContent: "center",
-                  flexWrap: "wrap"
-                })
+                display: "flex",
+                width: "100%",
+                // justifyContent: "center",
+                flexWrap: "wrap"
+              })
           }}
           className="veToolbar"
         >
@@ -170,11 +176,11 @@ export class ToolBar extends React.PureComponent {
               {items}
             </div>
           ) : (
-            items
-          )}
+              items
+            )}
           <div
-            style = {{
-              float:'right',
+            style={{
+              float: 'right',
               cursor: 'pointer'
             }}
           >
@@ -188,19 +194,36 @@ export class ToolBar extends React.PureComponent {
               />
             )}
           </div>
-          <div 
+
+          <div
+            classname="buttonDarkMode"
             style={{
-              float: "right", 
+              float: "right",
               cursor: 'pointer',
-              width: " 25px",
-              height: "25px",
+              width: "40px",
+              height: "30px",
               display: 'flex',
-              alignItems:"center",
-              backgroundColor:"gray",
-              borderRadius: "5px"
+              alignItems: "center",
+              borderRadius: "5px",
+              textAlign: "center",
+              backgroundColor: modeBackground
             }}
-             onClick = { this.changeDarkMode }
-          ><i class="fa fa-moon-o">Dark</i></div>
+            onClick={this.changeDarkMode}
+          >
+            {/* {this.state.darkMode ? <i class="fa fa-moon-o">DA</i> : <i class="fa fa-moon-o">LI</i>} */}
+            <div
+              style = {{
+                marginLeft: "0px",
+                marginTop: '-10px',
+                height: "20px",
+                width: "20px",
+                borderRadius: "50%",
+                boxShadow: `5px 5px 0 0 ${moonColor}`
+              }}
+            >
+
+            </div>
+          </div>
         </div>
         {closeFullscreen && (
           <CloseFullscreenButton onClick={handleFullscreenClose} />

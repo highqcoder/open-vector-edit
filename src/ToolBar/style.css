@@ -150,3 +150,10 @@
   /* the z-index has to be high for it to work with ice */
   z-index: 4000;
 }
+
+.bp3-dark .buttonDarkMode {
+  display: none;
+}
+.buttonLightMode {
+  display: none
+}
