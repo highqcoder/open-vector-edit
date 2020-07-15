@@ -9,7 +9,7 @@ class AnnotationPositioner extends React.PureComponent {
         className={
           (this.props.className || "") + " veRowViewAnnotationPosition"
         }
-        width={Math.max(0, this.props.width + 5)}
+        width={Math.max(0, this.props.width)}
         style={{
           position: "absolute",
           top: this.props.top,

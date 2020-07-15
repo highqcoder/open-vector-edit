@@ -36,7 +36,7 @@ class PointedAnnotation extends React.PureComponent {
       onlyShowLabelsThatDoNotFit
     } = this.props;
 
-    let width = ((widthInBps + gapsInside) * charWidth) ;
+    let width = ((widthInBps + gapsInside) * charWidth) * 0.96 ;
     let charWN = charWidth; //charWN is normalized
     if (charWidth < 15) {
       //allow the arrow width to adapt

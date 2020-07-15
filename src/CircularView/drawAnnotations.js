@@ -264,7 +264,6 @@ const DrawAnnotation = withHover(function ({
     if(annotationColorDec[i] > 255)
     annotationColorDec[i] = 255
   }
-  console.log(annotationColor)
   return (
   <React.Fragment>
     <defs>

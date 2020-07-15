@@ -30,7 +30,7 @@ function AASliver(props) {
       onContextMenu={onContextMenu}
       transform={
         "scale(" +
-        (width / 100) * 1.25 +
+        (width / 100) * 1.19 +
         ", " +
         height / 100 +
         ") translate(" +

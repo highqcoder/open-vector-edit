@@ -281,7 +281,7 @@ const DrawLabelGroup = withHover(function ({
       <text
         key="text"
         x={labelXStart}
-        textLength={text.length * fontWidth}
+        textLength={text.length * fontWidth }
         lengthAdjust="spacing"
         className={
           labelClass + label.className + (hovered ? " veAnnotationHovered" : "")

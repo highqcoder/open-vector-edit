@@ -102,6 +102,8 @@ class Sequence extends React.Component {
               const x = i * chunkWidth;
 
               if (x > visibleEnd || x + textLength < visibleStart) return null;
+              console.log("-------------------------------", seqChunk)
+
               return (
                 <text
                   key={i}
@@ -112,7 +114,7 @@ class Sequence extends React.Component {
                   {...{
                     // x: i * chunkWidth + i/2 * charWidth ,
                     // textLength: charWidth * seqChunk.length - charWidth,
-                    x,
+                    width: width,
                     textLength: alignmentData ? seqReadWidth : textLength,
                     y: height / 2,
                     lengthAdjust: "spacing"
@@ -179,7 +181,7 @@ const dnaToColor = {
 function getDnaColor(char, isReverse) {
   return (
     dnaToColor[
-      isReverse ? DNAComplementMap[char.toLowerCase()] : char.toLowerCase()
+    isReverse ? DNAComplementMap[char.toLowerCase()] : char.toLowerCase()
     ] || "lightgrey"
   );
 }
@@ -214,7 +216,7 @@ class ColoredSequence extends React.Component {
       colorPaths[getDnaColor(char, isReverse)] =
         (colorPaths[getDnaColor(char, isReverse)] || "") +
         `M${x},${y} L${x + width},${y} L${x + width},${y + height} L${x},${y +
-          height}`;
+        height}`;
     });
     return (
       <g>

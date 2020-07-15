@@ -1,3 +1,5 @@
+
+
 .ve-monospace-font {
   font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
   font-size: 12px;
@@ -70,9 +72,79 @@
   user-select: none;
 } */
 
+html {
+  font-family: "Inter black" !important;
+}
+
+text {
+  font-family: "Inter black" !important;
+}
 .veCircularViewFeature {
   stroke: none;
 }
 .veCircularViewFeature:hover {
   stroke: black
+}
+
+@font-face {
+  font-family: 'Inter black';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Fonts/Inter-Black-slnt=0.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Fonts/Inter-Bold-slnt=0.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter extraBold';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Fonts/Inter-ExtraBold-slnt=0.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter extraLight';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Fonts/Inter-ExtraLight-slnt=0.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter light';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Fonts/Inter-Light-slnt=0.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter medium';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Fonts/Inter-Medium-slnt=0.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Fonts/Inter-Regular-slnt=0.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter semiBold';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Fonts/Inter-SemiBold-slnt=0.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/Fonts/Inter-Thin-slnt=0.ttf") format("ttf");
 }
