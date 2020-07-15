@@ -194,7 +194,7 @@ function SequenceName({ sequenceName, sequenceLength, isProtein }) {
   return (
     <div key="circViewSvgCenterText" style={{ textAlign: "center" }}>
       <span style = {{fontSize:"20px"}}>{sequenceName && "exported"} </span>
-      <span style = {{color:"red"}}>
+      <span style = {{color:"gray"}}>
         {isProtein
           ? `${Math.floor(sequenceLength / 3)} AAs`
           : `${sequenceLength} bps`}

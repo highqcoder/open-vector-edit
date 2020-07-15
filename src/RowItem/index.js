@@ -52,7 +52,7 @@ export class RowItem extends React.PureComponent {
   const;
   render() {
     let {
-      charWidth = 12,
+      charWidth = 8,
       selectionLayer = { start: -1, end: -1 },
       deletionLayers = {},
       replacementLayers = {},
@@ -126,9 +126,9 @@ export class RowItem extends React.PureComponent {
       ...(Array.isArray(selectionLayer) ? selectionLayer : [selectionLayer])
     ];
     if (!width) {
-      width = bpsPerRow * charWidth;
+      width = bpsPerRow * charWidth * 0.95;
     } else {
-      charWidth = width / Math.max(bpsPerRow, 1);
+      charWidth = width / Math.max(bpsPerRow, 1) * 0.95;
     }
     let rowContainerStyle = {
       marginLeft: "10px",
