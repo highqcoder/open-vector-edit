@@ -136,7 +136,6 @@ export class RowItem extends React.PureComponent {
       minHeight,
       width: width + "px",
       paddidng: "20px",
-      backgroundColor : "white",
       borderRadius: "20px"
     };
     let getGaps = () => ({

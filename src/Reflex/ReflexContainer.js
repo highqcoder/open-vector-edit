@@ -769,7 +769,7 @@ class ReflexContainer extends React.Component {
     );
 
     return (
-      <div className={classNames.join(" ")} style={this.props.style}>
+      <div className={classNames.join(" ")} >
         {this.children}
       </div>
     );

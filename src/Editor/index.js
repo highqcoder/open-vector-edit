@@ -528,6 +528,8 @@ export class Editor extends React.Component {
           <ReflexSplitter
             key={activePanelId + "splitter"}
             style={{
+              height : "3%",
+              display : "none",
               // height: height + 38,
               zIndex: 1
             }}
@@ -554,107 +556,113 @@ export class Editor extends React.Component {
                   data-test={"ve-draggable-tabs" + index}
                   ref={provided.innerRef}
                   style={{
+                    marginTop: "30px",
+                    display: "flex",
+                    alignItems : "center",
+                    backgroundColor: "white",
+                    textAlign: "center",
                     height: tabHeight,
-                    paddingLeft: 3,
                     ...getListStyle(snapshot.isDraggingOver /* , tabDragging */)
                   }}
                 >
-                  {panelGroup.map(({ id, name, canClose }, index) => {
-                    return (
-                      <Draggable key={id} index={index} draggableId={id}>
-                        {(provided, snapshot) => (
-                          <div
-                            style={{
-                              wordWrap: "normal",
-                              flex: "0 0 auto",
-                              maxWidth: "100%",
-                              fontSize: "14px"
-                            }}
-                            onClick={() => {
-                              setPanelAsActive(id);
-                            }}
-                          >
+                    {panelGroup.map(({ id, name, canClose }, index) => {
+                      return (
+                        <Draggable 
+                          key={id} index={index} draggableId={id}
+                        >
+                          {(provided, snapshot) => (
                             <div
-                              onContextMenu={(e) => {
-                                showTabRightClickContextMenu(e, id);
-                              }}
-                              ref={provided.innerRef}
-                              {...provided.draggableProps}
-                              {...provided.dragHandleProps}
                               style={{
-                                // some basic styles to make the items look a bit nicer
-                                userSelect: "none",
-                                // change background colour if dragging
-                                background: snapshot.isDragging
-                                  ? "lightgreen"
-                                  : "none",
-                                cursor: "move",
-                                flex: "0 0 auto",
-                                ...provided.draggableProps.style
+                                wordWrap: "normal",
+                                maxWidth: "100%",
+                                fontSize: "14px",
+                              }}
+                              onClick={() => {
+                                setPanelAsActive(id);
                               }}
                             >
                               <div
-                                style={{
-                                  padding: 3,
-                                  borderBottom:
-                                    id === activePanelId
-                                      ? "2px solid #106ba3"
-                                      : "none",
-                                  color:
-                                    id === activePanelId
-                                      ? "#106ba3"
-                                      : "undefined",
-                                  marginLeft: 13,
-                                  marginRight: 13
+                                onContextMenu={(e) => {
+                                  showTabRightClickContextMenu(e, id);
                                 }}
-                                className={
-                                  (id === activePanelId ? "veTabActive " : "") +
-                                  camelCase("veTab-" + (name || id))
-                                }
+                                ref={provided.innerRef}
+                                {...provided.draggableProps}
+                                {...provided.dragHandleProps}
+                                style={{
+                                  // some basic styles to make the items look a bit nicer
+                                  userSelect: "none",
+                                  // change background colour if dragging
+                                  background: snapshot.isDragging
+                                    ? "lightgreen"
+                                    : "none",
+                                  cursor: "pointer",
+                                  flex: "0 0 auto",
+                                  ...provided.draggableProps.style
+                                }}
                               >
-                                {isFullScreen && (
-                                  <div //we need this div to wrap the tooltip to help the tooltip stay in the correct position https://github.com/TeselaGen/openVectorEditor/issues/436
-                                    style={{
-                                      zIndex: 15002,
-                                      position: "fixed",
-                                      top: 15,
-                                      right: 25
-                                    }}
-                                  >
-                                    <Tooltip
-                                      position="left"
-                                      content="Minimize Tab"
+                                <div
+                                  style={{
+                                    padding: 3,
+                                    borderBottom:
+                                      id === activePanelId
+                                        ? "2px solid #106ba3"
+                                        : "none",
+                                    color:
+                                      id === activePanelId
+                                        ? "#106ba3"
+                                        : "undefined",
+                                    marginLeft: 13,
+                                    marginRight: 13
+                                  }}
+                                  className={
+                                    (id === activePanelId ? "veTabActive " : "") +
+                                    camelCase("veTab-" + (name || id))
+                                  }
+                                >
+                                  {isFullScreen && (
+                                    <div //we need this div to wrap the tooltip to help the tooltip stay in the correct position https://github.com/TeselaGen/openVectorEditor/issues/436
+                                      style={{
+                                        zIndex: 15002,
+                                        position: "fixed",
+                                        top: 15,
+                                        right: 25
+                                      }}
                                     >
-                                      <Button
-                                        minimal
-                                        icon="minimize"
-                                        onClick={() => {
-                                          togglePanelFullScreen(activePanelId);
-                                        }}
-                                      />
-                                    </Tooltip>
-                                  </div>
-                                )}
-                                {name || id}
-                                {canClose && (
-                                  <Icon
-                                    icon="small-cross"
-                                    onClick={() => {
-                                      closePanel(id);
-                                    }}
-                                    style={{ paddingLeft: 5 }}
-                                    className="ve-clickable"
-                                  />
-                                )}
+                                      <Tooltip
+                                        position="left"
+                                        content="Minimize Tab"
+                                      >
+                                        <Button
+                                          minimal
+                                          icon="minimize"
+                                          onClick={() => {
+                                            togglePanelFullScreen(activePanelId);
+                                          }}
+                                        />
+                                      </Tooltip>
+                                    </div>
+                                  )}
+                                  {name || id}
+                                  {canClose && (
+                                    <Icon
+                                      icon="small-cross"
+                                      onClick={() => {
+                                        closePanel(id);
+                                      }}
+                                      style={{ paddingLeft: 5 }}
+                                      className="ve-clickable"
+                                    />
+                                  )}
+                                </div>
                               </div>
+                              {provided.placeholder}
                             </div>
-                            {provided.placeholder}
-                          </div>
-                        )}
-                      </Draggable>
-                    );
-                  })}
-                  {provided.placeholder}
+                          )}
+                        </Draggable>
+                      );
+                    })}
+                    {provided.placeholder}
+
                 </div>
               )}
             </Droppable>,

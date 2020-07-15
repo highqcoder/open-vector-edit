@@ -36,6 +36,7 @@
 .reflex-layout > .reflex-splitter {
   background-color: #eeeeee;
   z-index: 100;
+  display: none !important;
 }
 
 .reflex-layout > .reflex-splitter.active,
@@ -59,11 +60,10 @@
 }
 
 .reflex-layout.vertical > .reflex-splitter {
-  border-right: 1px solid #c6c6c6;
-  border-left: 1px solid #c6c6c6;
   cursor: col-resize;
   height: 100%;
   width: 2px;
+  display: none !important;
 }
 
 .reflex-layout.vertical > .reflex-splitter:hover,

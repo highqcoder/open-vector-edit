@@ -10,6 +10,14 @@
 .ve-draggable-tabs::-webkit-scrollbar {
   display: none;
 }
+.ve-draggable-tabs {
+  margin-left: "50px" !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  display: flex !important;
+  margin-bottom: 40px !important;
+  text-align: center !important;
+}
 .ve-propertiesPanel .data-table-header {
   margin-top: 3px;
   margin-right: 3px;

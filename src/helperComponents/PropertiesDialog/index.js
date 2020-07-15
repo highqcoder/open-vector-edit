@@ -121,9 +121,11 @@ export class PropertiesDialog extends React.Component {
         <div
           className="ve-propertiesPanel"
           style={{
-            display: "flex",
-            width,
-            height: Math.max(0, Number((heightFromDim || height) - 30)),
+            backgroundColor: "white",
+            margin: "10px",
+            borderRadius: "10px",
+            boxShadow : "1px 2px 2.8px 0 rgba(150, 150, 150, 0.322), 1px 2px 6.7px 0 rgba(150, 150, 150, 0.048), 1px 2px 12.5px 0 rgba(150, 150, 150, 0.06), 0 22.3px 17.9px 0 rgba(150, 150, 150, 0.072)",
+            // height: Math.max(0, Number((heightFromDim || height) - 30)),
             zIndex: 10,
             padding: 10
             // paddingBottom: '31px',

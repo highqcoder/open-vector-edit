@@ -68,9 +68,10 @@
 .reflex-layout.vertical > .reflex-splitter {
   border-right: 1px solid #c6c6c6;
   border-left: 1px solid #c6c6c6;
-  cursor: col-resize;
+  cursor: pointer;
   height: 100%;
   width: 2px;
+  display: none;
 }
 
 .reflex-layout.vertical > .reflex-splitter:hover,

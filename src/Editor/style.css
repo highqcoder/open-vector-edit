@@ -141,9 +141,21 @@
     opacity: 0;
   }
 }
+.veVectorInteractionWrapper {
+  background-color: white;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow:1px 2px 2.8px 2.2px rgba(150, 150, 150, 0.322),
+  1px 2px 6.7px 5.3px rgba(150, 150, 150, 0.048),
+  1px 2px 12.5px 10px rgba(150, 150, 150, 0.06),
+  0 22.3px 17.9px rgba(150, 150, 150, 0.072),
+  0 41.8px 33.4px rgba(150, 150, 150, 0.086),
+  0 100px 80px rgba(150, 150, 150, 0.12)
+}
 
 .veVectorInteractionWrapper .veSelectionLayer:not(.veCaret) {
-  background: gray;
+  
   fill: gray;
 }
 .veVectorInteractionWrapper:focus .veSelectionLayer:not(.veCaret) {
