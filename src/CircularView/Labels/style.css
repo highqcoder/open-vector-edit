@@ -23,11 +23,11 @@
 }
 
 .bp3-dark .veLabels .veAnnotationHovered:not(.topLevelLabelGroup) {
-  fill: white !important;
+  fill: #eef1fa !important;
   font-weight: normal;
 }
 .bp3-dark .veLabels .veAnnotationHovered rect {
-  fill: rgb(64, 64, 92) !important;
+  fill: #070714 !important;
 }
 /* .veLabelLine {
   opacity: 0.1;

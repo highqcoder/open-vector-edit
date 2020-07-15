@@ -4,6 +4,18 @@
   width: 100%;
 }
 
+.ve-propertiesPanel .bp3-dark {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #101026;
+}
+
+.veVectorInteractionWrapper .bp3-dark {
+  background-color: #101026;
+  
+}
+
 .ve-propertiesPanel .bp3-tab-list::-webkit-scrollbar {
   display: none;
 }

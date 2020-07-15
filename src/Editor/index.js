@@ -115,7 +115,7 @@ export class Editor extends React.Component {
   state = {
     isHotkeyDialogOpen: false,
     tabDragging: false,
-    previewModeFullscreen: false
+    previewModeFullscreen: false,
   };
 
   getExtraPanel = (/*panelOptions */) => {
@@ -251,6 +251,7 @@ export class Editor extends React.Component {
   openHotkeyDialog = () => {
     this.setState({ isHotkeyDialogOpen: true });
   };
+
 
   togglePreviewFullscreen = () => {
     const { togglePreviewFullscreen } = this.props;
@@ -559,7 +560,6 @@ export class Editor extends React.Component {
                     marginTop: "30px",
                     display: "flex",
                     alignItems : "center",
-                    backgroundColor: "white",
                     textAlign: "center",
                     height: tabHeight,
                     ...getListStyle(snapshot.isDraggingOver /* , tabDragging */)
@@ -802,7 +802,6 @@ export class Editor extends React.Component {
           withDigestTool
           {...ToolBarProps}
         />
-
         <CommandHotkeyHandler
           menuSearchHotkey={this.props.menuSearchHotkey}
           hotkeyDialogProps={{
@@ -819,7 +818,7 @@ export class Editor extends React.Component {
             flexGrow: "1",
             minHeight: 0,
             display: "flex",
-            backgroundColor: "#eef1fa"
+            // backgroundColor: "#eef1fa"
           }}
           className="tg-editor-container"
           id="section-to-print"

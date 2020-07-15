@@ -1,5 +1,5 @@
 body.bp3-dark {
-  background: #293742;
+  background: #070714;
 }
 
 html,
@@ -8,6 +8,7 @@ body,
   margin: 0px;
   padding: 0px;
   height: 100%;
+  background-color: #eef1fa;
 }
 
 .toggle-button-holder {

@@ -1,10 +1,10 @@
 .bp3-dark #circularViewAxis:not(.veAxisFill) {
-  fill: #293742 !important;
+  fill: #070714 !important;
   stroke: #f5f8fa !important;
 }
 
 .bp3-dark .veEditor {
-  background: #293742 !important;
+  background: #070714 !important;
 }
 
 .bp3-dark .veEditor .ve-draggable-tabs {
@@ -98,5 +98,12 @@
 }
 
 .bp3-dark .veWhiteBackground {
-  background: #293742;
+  background: #101026;
+}
+.bp3-dark .veVectorInteractionWrapper {
+  background: #101026;
+  /* box-shadow: none; */
+}
+.bp3-dark .ve-propertiesPanel {
+  background: #101026 !important;
 }

@@ -17,6 +17,20 @@
   display: none;
 }
 
+.veToolbar {
+  background-color: white;
+  padding: 15px;
+  box-shadow: 1px 2px 2.8px 0 rgba(150, 150, 150, 0.322),
+  1px 2px 6.7px 0 rgba(150, 150, 150, 0.048), 
+  1px 2px 12.5px 0 rgba(150, 150, 150, 0.06), 
+  0 22.3px 17.9px 0 rgba(150, 150, 150, 0.072);
+}
+
+.bp3-dark .veToolbar {
+  background-color: #101026;
+  box-shadow: none;
+}
+
 .veToolbar .veToolbarItemOuter {
   display: flex;
   height: 32px;

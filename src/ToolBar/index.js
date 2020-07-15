@@ -41,6 +41,21 @@ const allTools = {
 };
 
 export class ToolBar extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      darkMode: document.body.className.includes("bp3-dark")
+    };
+  }
+
+  changeDarkMode = () => {
+    this.setState({
+      darkMode: !this.state.darkMode
+    });
+    document.body.classList.toggle("bp3-dark");
+  };
+
   render() {
     const {
       modifyTools,
@@ -146,10 +161,10 @@ export class ToolBar extends React.PureComponent {
               className="veTools-displayMenuBarAboveTools"
               style={{
                 display: "flex",
-                justifyContent: "center",
+                // justifyContent: "center",
                 marginLeft: 15,
-                flexWrap: "wrap"
-                // width: "100%"
+                // flexWrap: "wrap"
+                width: "100%"
               }}
             >
               {items}
@@ -159,7 +174,8 @@ export class ToolBar extends React.PureComponent {
           )}
           <div
             style = {{
-              float:'right'
+              float:'right',
+              cursor: 'pointer'
             }}
           >
             {showMenuBar && (
@@ -172,6 +188,19 @@ export class ToolBar extends React.PureComponent {
               />
             )}
           </div>
+          <div 
+            style={{
+              float: "right", 
+              cursor: 'pointer',
+              width: " 25px",
+              height: "25px",
+              display: 'flex',
+              alignItems:"center",
+              backgroundColor:"gray",
+              borderRadius: "5px"
+            }}
+             onClick = { this.changeDarkMode }
+          ><i class="fa fa-moon-o">Dark</i></div>
         </div>
         {closeFullscreen && (
           <CloseFullscreenButton onClick={handleFullscreenClose} />
