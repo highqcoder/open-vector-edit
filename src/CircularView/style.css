@@ -17,6 +17,14 @@
   display: flex;
 }
 
+#circularViewAxis{
+  fill: #f6f6fa
+}
+
+.bp3-dark #circularViewAxis {
+  fill : #19062f
+}
+
 .selectionLayerInverseWrapper {
   fill: none !important;
 }

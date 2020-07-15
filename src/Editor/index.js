@@ -576,6 +576,7 @@ export class Editor extends React.Component {
                                 wordWrap: "normal",
                                 maxWidth: "100%",
                                 fontSize: "14px",
+                                textAlign: 'center'
                               }}
                               onClick={() => {
                                 setPanelAsActive(id);
@@ -602,17 +603,28 @@ export class Editor extends React.Component {
                               >
                                 <div
                                   style={{
-                                    padding: 3,
+                                    width:"130px",
+                                    paddingTop: "6px",
+                                    paddingBottom: "6px",
+                                    paddingLeft: "15px",
+                                    paddingRight: "15px",
+                                    borderRadius: "25px",
+                                    boxShadow: 
+                                      id === activePanelId 
+                                        ? "1px 2px 2.8px 0 rgba(150, 150, 150, 0.322), 1px 2px 6.7px 0 rgba(150, 150, 150, 0.048), 1px 2px 12.5px 0 rgba(150, 150, 150, 0.06), 0 22.3px 17.9px 0 rgba(150, 150, 150, 0.072)"
+                                        : "none",
+                                    backgroundColor :
+                                      id === activePanelId
+                                        ? "#7100ff"
+                                        : "none",
                                     borderBottom:
                                       id === activePanelId
-                                        ? "2px solid #106ba3"
+                                        ? "2px solid #7100ff"
                                         : "none",
                                     color:
                                       id === activePanelId
-                                        ? "#106ba3"
+                                        ? "white"
                                         : "undefined",
-                                    marginLeft: 13,
-                                    marginRight: 13
                                   }}
                                   className={
                                     (id === activePanelId ? "veTabActive " : "") +

@@ -1,7 +1,7 @@
 
 
-.ve-monospace-font {
-  font-family: "Ubuntu Mono", "Lucida Console", Monaco, monospace;
+text .ve-monospace-font {
+  font-family: "Inter black", "Lucida Console", Monaco, monospace;
   font-size: 12px;
 }
 

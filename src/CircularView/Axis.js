@@ -85,7 +85,6 @@ function Axis({
         id="circularViewAxis"
         key="circleOuter"
         r={radiusToUse + ringThickness}
-        style={{ fill: "#f6f6fa", strokeWidth: 5 }}
       />
       {/* <circle
         id="circularViewAxis"

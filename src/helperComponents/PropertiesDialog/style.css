@@ -23,12 +23,21 @@
   display: none;
 }
 .ve-draggable-tabs {
-  margin-left: "50px" !important;
+  /* margin-left: "50px" !important; */
+  height: 30px !important;
   border-top: none !important;
+  margin: 40px auto !important;
+  padding: 0 !important;
+  border-radius: 25px;
   border-bottom: none !important;
   display: flex !important;
-  margin-bottom: 40px !important;
   text-align: center !important;
+  background-color: white;
+  width: 260px;
+  box-shadow: 1px 2px 2.8px 0 rgba(150, 150, 150, 0.322),
+  1px 2px 6.7px 0 rgba(150, 150, 150, 0.048), 
+  1px 2px 12.5px 0 rgba(150, 150, 150, 0.06), 
+  0 22.3px 17.9px 0 rgba(150, 150, 150, 0.072)
 }
 .ve-propertiesPanel .data-table-header {
   margin-top: 3px;
@@ -91,4 +100,7 @@
 
 .ve-enzymeSubrow .ReactTable .rt-tr-group:last-child {
   margin-bottom: 0px;
+}
+.ReactTable .rt-thead {
+  color : #ffffff !important
 }
