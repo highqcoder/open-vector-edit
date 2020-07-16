@@ -124,7 +124,8 @@ class TranslationProperties extends React.Component {
                   : undefined
               }
             >
-              <AnchorButton
+              <div></div>
+              {/* <AnchorButton
                 onClick={() => {
                   deleteTranslation(translationPropertiesSelectedEntities);
                 }}
@@ -136,7 +137,7 @@ class TranslationProperties extends React.Component {
                 }
               >
                 Delete
-              </AnchorButton>
+              </AnchorButton> */}
             </Tooltip>
           </div>
         )}

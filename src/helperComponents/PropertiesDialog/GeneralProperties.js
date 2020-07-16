@@ -44,6 +44,7 @@ class GeneralProperties extends React.Component {
               onFieldSubmit={val => {
                 sequenceNameUpdate(val);
               }}
+              className = "nameDescription"
               name="name"
               enableReinitialize
               defaultValue={name}
@@ -115,13 +116,20 @@ class GeneralProperties extends React.Component {
             </div>
           </div>
         )}
-        <div>Description:</div>
-        <TextareaField
-          clickToEdit
-          name="description"
-          onFieldSubmit={this.updateSeqDesc}
-          defaultValue={description}
-        />
+        <div className="ve-flex-row">
+          <div className="ve-column-left">
+            <div>Description:</div>
+          </div>
+          <div className="ve-column-right">
+            <TextareaField
+              clickToEdit
+              className = "description"
+              name="description"
+              onFieldSubmit={this.updateSeqDesc}
+              defaultValue={description}
+            />
+          </div>
+        </div>
       </React.Fragment>
     );
   }

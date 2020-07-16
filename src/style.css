@@ -75,7 +75,10 @@ text .ve-monospace-font {
 html {
   font-family: "Inter black" !important;
 }
-
+body {
+  /* font-family: "Inter black" !important; */
+}
+ 
 text {
   font-family: "Inter black" !important;
 }

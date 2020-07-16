@@ -133,7 +133,7 @@ export class Editor extends React.Component {
       prevProps.sequenceData &&
       prevProps.sequenceData.stateTrackingId &&
       this.props.sequenceData.stateTrackingId !==
-        prevProps.sequenceData.stateTrackingId
+      prevProps.sequenceData.stateTrackingId
     ) {
       this.props.handleSave();
     }
@@ -171,7 +171,7 @@ export class Editor extends React.Component {
         (panelGroup, groupIndex) => {
           const panelToMove =
             panelsShown[
-              Number(result.source.droppableId.replace("droppable-id-", ""))
+            Number(result.source.droppableId.replace("droppable-id-", ""))
             ][result.source.index];
           if (
             Number(groupIndex) ===
@@ -336,7 +336,7 @@ export class Editor extends React.Component {
       (editorNode &&
         editorNode.parentNode &&
         editorNode.parentNode.clientHeight) ||
-        0
+      0
     );
 
     if (_height) height = Math.max(minHeight, _height);
@@ -491,8 +491,8 @@ export class Editor extends React.Component {
           isInsideEditor //pass this prop to let the sub components know they're being rendered as an editor tab
         />
       ) : (
-        <div> No Panel Found!</div>
-      );
+          <div> No Panel Found!</div>
+        );
 
       const showTabRightClickContextMenu = (e, id) => {
         const tabIdToUse = id || activePanelId;
@@ -529,8 +529,8 @@ export class Editor extends React.Component {
           <ReflexSplitter
             key={activePanelId + "splitter"}
             style={{
-              height : "3%",
-              display : "none",
+              height: "3%",
+              display: "none",
               // height: height + 38,
               zIndex: 1
             }}
@@ -559,156 +559,156 @@ export class Editor extends React.Component {
                   style={{
                     marginTop: "30px",
                     display: "flex",
-                    alignItems : "center",
+                    alignItems: "center",
                     textAlign: "center",
                     height: tabHeight,
                     ...getListStyle(snapshot.isDraggingOver /* , tabDragging */)
                   }}
                 >
-                    {panelGroup.map(({ id, name, canClose }, index) => {
-                      return (
-                        <Draggable 
-                          key={id} index={index} draggableId={id}
-                        >
-                          {(provided, snapshot) => (
+                  {panelGroup.map(({ id, name, canClose }, index) => {
+                    return (
+                      <Draggable
+                        key={id} index={index} draggableId={id}
+                      >
+                        {(provided, snapshot) => (
+                          <div
+                            style={{
+                              wordWrap: "normal",
+                              maxWidth: "100%",
+                              fontSize: "14px",
+                              textAlign: 'center'
+                            }}
+                            onClick={() => {
+                              setPanelAsActive(id);
+                            }}
+                          >
                             <div
-                              style={{
-                                wordWrap: "normal",
-                                maxWidth: "100%",
-                                fontSize: "14px",
-                                textAlign: 'center'
+                              onContextMenu={(e) => {
+                                showTabRightClickContextMenu(e, id);
                               }}
-                              onClick={() => {
-                                setPanelAsActive(id);
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                              style={{
+                                // some basic styles to make the items look a bit nicer
+                                userSelect: "none",
+                                // change background colour if dragging
+                                background: snapshot.isDragging
+                                  ? "lightgreen"
+                                  : "none",
+                                cursor: "pointer",
+                                flex: "0 0 auto",
+                                ...provided.draggableProps.style
                               }}
                             >
                               <div
-                                onContextMenu={(e) => {
-                                  showTabRightClickContextMenu(e, id);
-                                }}
-                                ref={provided.innerRef}
-                                {...provided.draggableProps}
-                                {...provided.dragHandleProps}
                                 style={{
-                                  // some basic styles to make the items look a bit nicer
-                                  userSelect: "none",
-                                  // change background colour if dragging
-                                  background: snapshot.isDragging
-                                    ? "lightgreen"
-                                    : "none",
-                                  cursor: "pointer",
-                                  flex: "0 0 auto",
-                                  ...provided.draggableProps.style
+                                  width: "130px",
+                                  paddingTop: "6px",
+                                  paddingBottom: "6px",
+                                  paddingLeft: "15px",
+                                  paddingRight: "15px",
+                                  borderRadius: "25px",
+                                  boxShadow:
+                                    id === activePanelId
+                                      ? "1px 2px 2.8px 0 rgba(150, 150, 150, 0.322), 1px 2px 6.7px 0 rgba(150, 150, 150, 0.048), 1px 2px 12.5px 0 rgba(150, 150, 150, 0.06), 0 22.3px 17.9px 0 rgba(150, 150, 150, 0.072)"
+                                      : "none",
+                                  backgroundColor:
+                                    id === activePanelId
+                                      ? "#7100ff"
+                                      : "none",
+                                  borderBottom:
+                                    id === activePanelId
+                                      ? "2px solid #7100ff"
+                                      : "none",
+                                  color:
+                                    id === activePanelId
+                                      ? "white"
+                                      : "undefined",
                                 }}
+                                className={
+                                  (id === activePanelId ? "veTabActive " : "") +
+                                  camelCase("veTab-" + (name || id))
+                                }
                               >
-                                <div
-                                  style={{
-                                    width:"130px",
-                                    paddingTop: "6px",
-                                    paddingBottom: "6px",
-                                    paddingLeft: "15px",
-                                    paddingRight: "15px",
-                                    borderRadius: "25px",
-                                    boxShadow: 
-                                      id === activePanelId 
-                                        ? "1px 2px 2.8px 0 rgba(150, 150, 150, 0.322), 1px 2px 6.7px 0 rgba(150, 150, 150, 0.048), 1px 2px 12.5px 0 rgba(150, 150, 150, 0.06), 0 22.3px 17.9px 0 rgba(150, 150, 150, 0.072)"
-                                        : "none",
-                                    backgroundColor :
-                                      id === activePanelId
-                                        ? "#7100ff"
-                                        : "none",
-                                    borderBottom:
-                                      id === activePanelId
-                                        ? "2px solid #7100ff"
-                                        : "none",
-                                    color:
-                                      id === activePanelId
-                                        ? "white"
-                                        : "undefined",
-                                  }}
-                                  className={
-                                    (id === activePanelId ? "veTabActive " : "") +
-                                    camelCase("veTab-" + (name || id))
-                                  }
-                                >
-                                  {isFullScreen && (
-                                    <div //we need this div to wrap the tooltip to help the tooltip stay in the correct position https://github.com/TeselaGen/openVectorEditor/issues/436
-                                      style={{
-                                        zIndex: 15002,
-                                        position: "fixed",
-                                        top: 15,
-                                        right: 25
-                                      }}
+                                {isFullScreen && (
+                                  <div //we need this div to wrap the tooltip to help the tooltip stay in the correct position https://github.com/TeselaGen/openVectorEditor/issues/436
+                                    style={{
+                                      zIndex: 15002,
+                                      position: "fixed",
+                                      top: 15,
+                                      right: 25
+                                    }}
+                                  >
+                                    <Tooltip
+                                      position="left"
+                                      content="Minimize Tab"
                                     >
-                                      <Tooltip
-                                        position="left"
-                                        content="Minimize Tab"
-                                      >
-                                        <Button
-                                          minimal
-                                          icon="minimize"
-                                          onClick={() => {
-                                            togglePanelFullScreen(activePanelId);
-                                          }}
-                                        />
-                                      </Tooltip>
-                                    </div>
-                                  )}
-                                  {name || id}
-                                  {canClose && (
-                                    <Icon
-                                      icon="small-cross"
-                                      onClick={() => {
-                                        closePanel(id);
-                                      }}
-                                      style={{ paddingLeft: 5 }}
-                                      className="ve-clickable"
-                                    />
-                                  )}
-                                </div>
+                                      <Button
+                                        minimal
+                                        icon="minimize"
+                                        onClick={() => {
+                                          togglePanelFullScreen(activePanelId);
+                                        }}
+                                      />
+                                    </Tooltip>
+                                  </div>
+                                )}
+                                {name || id}
+                                {canClose && (
+                                  <Icon
+                                    icon="small-cross"
+                                    onClick={() => {
+                                      closePanel(id);
+                                    }}
+                                    style={{ paddingLeft: 5 }}
+                                    className="ve-clickable"
+                                  />
+                                )}
                               </div>
-                              {provided.placeholder}
                             </div>
-                          )}
-                        </Draggable>
-                      );
-                    })}
-                    {provided.placeholder}
+                            {provided.placeholder}
+                          </div>
+                        )}
+                      </Draggable>
+                    );
+                  })}
+                  {provided.placeholder}
 
                 </div>
               )}
             </Droppable>,
             ...(panelsToShow.length === 1
               ? [
-                  <Droppable //extra add tab box (only shown when there is 1 tab being shown)!
-                    key="extra-drop-box"
-                    direction="horizontal"
-                    droppableId={"droppable-id-" + (index + 1).toString()}
-                  >
-                    {(provided, snapshot) => (
+                <Droppable //extra add tab box (only shown when there is 1 tab being shown)!
+                  key="extra-drop-box"
+                  direction="horizontal"
+                  droppableId={"droppable-id-" + (index + 1).toString()}
+                >
+                  {(provided, snapshot) => (
+                    <div
+                      ref={provided.innerRef}
+                      style={getSplitScreenListStyle(
+                        snapshot.isDraggingOver,
+                        tabDragging
+                      )}
+                    >
                       <div
-                        ref={provided.innerRef}
-                        style={getSplitScreenListStyle(
-                          snapshot.isDraggingOver,
-                          tabDragging
-                        )}
+                        style={{
+                          position: "absolute",
+                          left: "45%",
+                          top: "45%",
+                          fontSize: 26
+                        }}
                       >
-                        <div
-                          style={{
-                            position: "absolute",
-                            left: "45%",
-                            top: "45%",
-                            fontSize: 26
-                          }}
-                        >
-                          {" "}
+                        {" "}
                           + Add Tab
                         </div>
-                        {provided.placeholder}
-                      </div>
-                    )}
-                  </Droppable>
-                ]
+                      {provided.placeholder}
+                    </div>
+                  )}
+                </Droppable>
+              ]
               : []),
             isFullScreen ? (
               <div
@@ -725,8 +725,8 @@ export class Editor extends React.Component {
                 {panel}
               </div>
             ) : (
-              panel
-            )
+                panel
+              )
           ]}
         </ReflexElement>
       );

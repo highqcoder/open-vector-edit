@@ -112,7 +112,7 @@ const genericAnnotationProperties = ({ annotationType, noColor, noType }) => {
             schema={schema}
             entities={annotationsToUse}
           />
-          {!readOnly && (
+          {/* {!readOnly && (
             <div className="vePropertiesFooter">
               <Button
                 disabled={!sequenceLength}
@@ -156,7 +156,7 @@ const genericAnnotationProperties = ({ annotationType, noColor, noType }) => {
                 />
               )}
             </div>
-          )}
+          )} */}
         </React.Fragment>
       );
     }
