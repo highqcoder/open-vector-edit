@@ -148,3 +148,7 @@
 .bp3-dark .bp3-button.bp3-minimal.bp3-intent-primary {
   color: #4f4f8a !important ;
 }
+
+.bp3-tab[aria-selected="true"], .bp3-tab:not([aria-disabled="true"]):hover {
+  color : #7100ff !important
+}
