@@ -115,7 +115,7 @@ class Sequence extends React.Component {
                     // x: i * chunkWidth + i/2 * charWidth ,
                     // textLength: charWidth * seqChunk.length - charWidth,
                     width: width,
-                    textLength: alignmentData ? seqReadWidth : textLength,
+                    textLength: (alignmentData ? seqReadWidth : textLength) * 0.95,
                     y: height / 2,
                     lengthAdjust: "spacing"
                   }}
@@ -154,7 +154,7 @@ class Sequence extends React.Component {
                 {...{
                   x: 0 + fudge / 2,
                   y: height - height / 4,
-                  textLength: (alignmentData ? seqReadWidth : width) - fudge,
+                  textLength: ((alignmentData ? seqReadWidth : width) - fudge) * 0.95,
                   lengthAdjust: "spacing"
                 }}
               >

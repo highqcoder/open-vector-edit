@@ -32,9 +32,9 @@ function Orf(props) {
   if (rangeType === "end" || rangeType === "beginningAndEnd") {
     arrow = (
       <path
-        transform={`translate(${width +
+        transform={`translate(${width * 0.9 +
           gapsInside -
-          Math.max(charWidth, 5)},0) scale(${Math.max(charWidth, 8) /
+          Math.max(charWidth, 5) },0) scale(${Math.max(charWidth, 8) /
           64},${heightToUse / 64})`}
         d={
           rangeType === "start"
@@ -51,10 +51,11 @@ function Orf(props) {
     function(internalStartCodon, index) {
       return React.cloneElement(circle, {
         key: index,
-        transform: `translate(${charWidth * internalStartCodon},0)`
+        transform: `translate(${charWidth * internalStartCodon *0.95},0)`
       });
     }
   );
+  console.log("=======  width  =======", (width -gapsInside-charWidth)/70)
   return (
     <g
       onClick={function(event) {
@@ -69,16 +70,17 @@ function Orf(props) {
       fillOpacity={1}
       fill={color}
       transform={
-        forward ? null : `translate(${width + gapsInside},0) scale(-1,1)`
+        forward ? null : `translate(${width * 0.95 + gapsInside},0) scale(-1,1)`
       }
     >
       <path
+        className = "asdfasdfasdfasdfasdf"
         transform={
-          (rangeType === "start" ? `translate(${charWidth},0)` : "") +
+          (rangeType === "start" ? `translate(${-charWidth + 10},0)` : "") +
           `scale(${(width +
             gapsInside -
             (rangeType === "middle" ? 0 : charWidth)) /
-            64},${heightToUse / 64})`
+            64*0.95},${heightToUse / 64})`
         }
         d="M0 40 L64 40 L64 20 L0 20 Z"
       />

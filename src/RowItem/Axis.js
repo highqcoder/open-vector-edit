@@ -62,7 +62,7 @@ let Axis = function (props) {
     tickMarkSVG.push(
       <path
         key={"axisTickMarkPath " + i + " " + tickMarkPosition}
-        d={"M" + xCenter + "," + yStart + " L" + xCenter + "," + yEnd}
+        d={"M" + xCenter * 0.95 + "," + yStart + " L" + xCenter * 0.95+ "," + yEnd}
         stroke="black"
       />
     );
@@ -80,11 +80,11 @@ let Axis = function (props) {
           key={"axisTickMarkText " + i + " " + tickMarkPosition}
           stroke="black"
           x={
-            i === 0 //if first label in row, or last label in row, we add checks to make sure the axis number labels don't go outside of the width of the row
+            (i === 0 //if first label in row, or last label in row, we add checks to make sure the axis number labels don't go outside of the width of the row
               ? Math.max(positionLength, xCenter)
               : i === tickMarkPositions.length - 1
               ? Math.min(bpsPerRow * charWidth - positionLength, xCenter)
-              : xCenter
+              : xCenter) * 0.95
           }
           y={annotationHeight}
           style={{ textAnchor: "middle", fontSize: 10, fontFamily: "Verdana" }}
@@ -104,7 +104,7 @@ let Axis = function (props) {
     >
       {tickMarkSVG}
       <path
-        d={"M" + xStart + "," + yStart + " L" + xEnd + "," + yStart}
+        d={"M" + xStart * 0.95 + "," + yStart + " L" + xEnd * 0.95 + "," + yStart}
         stroke="black"
       />
     </svg>
