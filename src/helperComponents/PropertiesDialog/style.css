@@ -39,6 +39,11 @@
   1px 2px 12.5px 0 rgba(150, 150, 150, 0.06), 
   0 22.3px 17.9px 0 rgba(150, 150, 150, 0.072)
 }
+
+.bp3-dark .ve-draggable-tabs{
+  background-color: #070714 !important;
+}
+
 .ve-propertiesPanel .data-table-header {
   margin-top: 3px;
   margin-right: 3px;
@@ -79,6 +84,7 @@
 
 .ve-propertiesPanel .bp3-popover-wrapper {
   width: fit-content;
+
 }
 
 .ve-propertiesPanel .data-table-container {
@@ -103,4 +109,42 @@
 }
 .ReactTable .rt-thead {
   color : #ffffff !important
+}
+
+.bp3-minimal.bp3-intent-primary.bp3-active {
+  background-color: #f1efff !important;
+  color: red !important;
+}
+
+.bp3-button.bp3-minimal.bp3-intent-primary.bp3-active {
+  color : #7100ff !important
+}
+
+.bp3-button.bp3-minimal.bp3-intent-primary {
+  color: #c6c7cf;
+}
+
+.bp3-dark.bp3-button.bp3-minimal.bp3-intent-primary {
+  background-color: #5600ff !important;
+  color: white !important;
+}
+
+.bp3-minimal.bp3-intent-primary.bp3-disabled {
+  color: #c6c7cf !important;
+}
+
+.bp3-dark.bp3-minimal.bp3-intent-primary.bp3-disabled {
+  color: white !important;
+}
+
+.bp3-dark .bp3-button.bp3-minimal.bp3-intent-primary:active, .bp3-dark .bp3-button.bp3-minimal.bp3-intent-primary.bp3-active {
+  background-color: #5600ff !important;
+  color: white !important;
+}
+
+.bp3-dark .bp3-button.bp3-minimal.bp3-intent-primary:disabled, .bp3-dark .bp3-button.bp3-minimal.bp3-intent-primary.bp3-disabled{
+  color: #4f4f8a !important ;
+}
+.bp3-dark .bp3-button.bp3-minimal.bp3-intent-primary {
+  color: #4f4f8a !important ;
 }

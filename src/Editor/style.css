@@ -184,6 +184,5 @@
   display: inherit;
 }
 .bp3-dark .veTabActive {
-  color: #48aff0 !important;
-  border-bottom-color: #48aff0 !important;
+  color: white !important;
 }
