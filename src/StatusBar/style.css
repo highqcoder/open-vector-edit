@@ -33,4 +33,10 @@
   display: none;
 }
 
+.bp3-icon.bp3-intent-primary, .bp3-icon-standard.bp3-intent-primary, .bp3-icon-large.bp3-intent-primary {
+  color: #7100ff !important;
+}
+.bp3-icon.bp3-intent-primary, .bp3-icon-standard.bp3-intent-primary, .bp3-icon-large.bp3-intent-primary {
+  color: #7100ff !important;  
+}
 /*# sourceMappingURL= style.css.map */

@@ -589,7 +589,7 @@ function positionCutsites(annotation) {
 
 function RotateCircularView({ setRotationRadians }) {
   return (
-    <div style={{ zIndex: 1000, position: "absolute" }}>
+    <div style={{ zIndex: 1000, position: "absolute", display: "none" }}>
       <UncontrolledSliderWithPlusMinusBtns
         onChange={(val) => {
           const el = document.querySelector(".circularViewSvg");
