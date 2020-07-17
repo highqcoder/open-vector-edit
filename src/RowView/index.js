@@ -471,7 +471,7 @@ export class RowView extends React.Component {
           style={{
             overflowY: "auto",
             overflowX: "visible",
-            height: height || 300,
+            height: height* 0.8 || 300,
             width: containerWidthMinusMargin + marginWidth,
             paddingLeft: marginWidth / 2,
             paddingRight: marginWidth / 2
