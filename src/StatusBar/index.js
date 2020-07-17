@@ -84,7 +84,7 @@ const ShowSelectionItem = compose(
             minimal
             disabled={sequenceLength <= 0}
             onClick={handleInverse}
-            style={{ marginLeft: 5, color: "#48AFF0" }}
+            style={{ paddingTop : 3, marginLeft: 5, color: "#7100ff", fontWeight: 600 }}
             small
           >
             Select Inverse
