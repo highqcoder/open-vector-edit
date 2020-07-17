@@ -52,6 +52,7 @@
   overflow: scroll;
 }
 .ve-propertiesPanel .bp3-tabs .bp3-tab-panel {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
