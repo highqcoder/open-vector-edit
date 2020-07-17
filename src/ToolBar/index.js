@@ -21,6 +21,10 @@ import visibilityTool from "./visibilityTool";
 import undoTool from "./undoTool";
 import redoTool from "./redoTool";
 import { isString } from "util";
+import logo from "../../logo/logo.png";
+import personLight from "../../logo/personLight.png";
+import personDark from "../../logo/personDark.png";
+
 
 const allTools = {
   downloadTool,
@@ -136,10 +140,14 @@ export class ToolBar extends React.PureComponent {
     }
 
     let modeBackground = "#f5f6fc"
-    let moonColor = "gray"
+    let moonColor = "#9b9caa"
+    let menuColor = "#9b9caa"
+    let personIcon = personLight
     if(this.state.darkMode) {
       modeBackground = "#25234f"
       moonColor = "yellow"
+      menuColor = "#4f4f8a"
+      personIcon = personDark
     }
     return (
       <div style={{ display: "flex" }}>
@@ -162,6 +170,7 @@ export class ToolBar extends React.PureComponent {
           }}
           className="veToolbar"
         >
+          <img src={logo} alt="Logo" style = {{width: "50px", paddingRight : '10px', paddingTop: "4px"}} />
           {displayMenuBarAboveTools && showMenuBar ? (
             <div
               className="veTools-displayMenuBarAboveTools"
@@ -184,7 +193,7 @@ export class ToolBar extends React.PureComponent {
               cursor: 'pointer'
             }}
           >
-            {showMenuBar && (
+            {/* {showMenuBar && (
               <MenuBar
                 openHotkeyDialog={openHotkeyDialog}
                 {...pick(this.props, userDefinedHandlersAndOpts)}
@@ -192,20 +201,19 @@ export class ToolBar extends React.PureComponent {
                 style={{ marginLeft: 0 }}
                 editorName={editorName}
               />
-            )}
+            )} */}
           </div>
-
           <div
             classname="buttonDarkMode"
             style={{
               float: "right",
               cursor: 'pointer',
-              width: "40px",
-              height: "30px",
+              width: "35px",
+              height: "35px",
               display: 'flex',
               alignItems: "center",
               borderRadius: "5px",
-              textAlign: "center",
+
               backgroundColor: modeBackground
             }}
             onClick={this.changeDarkMode}
@@ -221,8 +229,63 @@ export class ToolBar extends React.PureComponent {
                 boxShadow: `5px 5px 0 0 ${moonColor}`
               }}
             >
-
             </div>
+          </div>
+          <div
+            style = {{
+              width: "35px",
+              height: "35px",
+              marginLeft: "20px",
+              borderRadius: "5px",
+              display:"flex",
+              alignItems: "center",
+              backgroundColor : modeBackground,
+              cursor: "pointer"
+            }}
+          >
+          <img style = {{ width : "20px", height : "20px", margin:"auto"}} src = {personIcon}/>
+          </div>
+          <div
+            style = {{
+              width: "35px",
+              height: "35px",
+              marginLeft: "20px",
+              borderRadius: "5px",
+              textAlign: "center",
+              backgroundColor : modeBackground,
+              cursor: "pointer"
+            }}
+          >
+            <div style = {{
+              height: "6px"
+            }}></div>
+            <div 
+              style = {{
+                width: "20px",
+                height: "3px",
+                backgroundColor: menuColor,
+                borderRadius : "4px",
+                margin : "4px auto"
+              }}
+            ></div>
+            <div 
+              style = {{
+                width: "20px",
+                height: "3px",
+                borderRadius : "4px",
+                backgroundColor: menuColor,
+                margin : "4px auto"
+              }
+            }></div>
+            <div 
+              style = {{
+                width: "20px",
+                height: "3px",
+                borderRadius : "4px",
+                backgroundColor: menuColor,
+                margin : "4px auto"
+              }
+            }></div>
           </div>
         </div>
         {closeFullscreen && (

@@ -404,6 +404,7 @@ function VectorInteractionHOC(Component /* options */) {
       //we only call caretPositionUpdate if we're actually changing something
       this.props.caretPositionUpdate(position);
     };
+
     selectionLayerUpdate = (newSelection) => {
       let {
         selectionLayer = { start: -1, end: -1 },
@@ -500,6 +501,7 @@ function VectorInteractionHOC(Component /* options */) {
             }
           ];
     };
+
     insertHelper = {
       onClick: (e, ctxInfo) => {
         this.handleDnaInsert({
@@ -704,11 +706,13 @@ function VectorInteractionHOC(Component /* options */) {
       ];
       return items;
     };
+
     normalizeAction = ({ event, ...rest }, handler) => {
       event.preventDefault();
       event.stopPropagation();
       return handler({ event, ...rest }, this.props);
     };
+
     enhanceRightClickAction = (action, key) => {
       return (opts) => {
         const lastFocusedEl = document.activeElement;
@@ -755,6 +759,7 @@ function VectorInteractionHOC(Component /* options */) {
     digestLaneRightClicked = this.enhanceRightClickAction(() => {
       return ["newFeature", "newPart"];
     }, "digestLaneRightClicked");
+
     searchLayerRightClicked = this.enhanceRightClickAction(({ annotation }) => {
       this.props.selectionLayerUpdate({
         start: annotation.start,
@@ -836,6 +841,7 @@ function VectorInteractionHOC(Component /* options */) {
         "viewPartProperties"
       ];
     }, "partRightClicked");
+
     warningRightClicked = this.enhanceRightClickAction(({ annotation }) => {
       this.props.selectionLayerUpdate({
         start: annotation.start,
@@ -857,6 +863,7 @@ function VectorInteractionHOC(Component /* options */) {
         ...this.getSelectionMenuOptions(annotation)
       ];
     }, "partRightClicked");
+
     featureRightClicked = this.enhanceRightClickAction(
       ({ annotation, event }) => {
         this.props.selectionLayerUpdate({
@@ -939,6 +946,7 @@ function VectorInteractionHOC(Component /* options */) {
       () => ["viewCutsiteProperties"],
       "cutsiteRightClicked"
     );
+
     primerRightClicked = this.enhanceRightClickAction(({ annotation }) => {
       this.props.selectionLayerUpdate({
         start: annotation.start,
@@ -954,6 +962,7 @@ function VectorInteractionHOC(Component /* options */) {
         "viewPrimerProperties"
       ];
     }, "primerRightClicked");
+
     orfRightClicked = this.enhanceRightClickAction(({ annotation }) => {
       this.props.selectionLayerUpdate({
         start: annotation.start,
@@ -965,6 +974,7 @@ function VectorInteractionHOC(Component /* options */) {
         "viewOrfProperties"
       ];
     }, "orfRightClicked");
+    
     translationRightClicked = this.enhanceRightClickAction(
       ({ event, annotation }) => {
         event.preventDefault();
@@ -1072,7 +1082,7 @@ function VectorInteractionHOC(Component /* options */) {
         <div
           tabIndex={0} //this helps with focusing using Keyboard's parentElement.focus()
           ref={(c) => (this.node = c)}
-          className="veVectorInteractionWrapper"
+          className={`veVectorInteractionWrapper`}
           style={{ position: "relative", ...vectorInteractionWrapperStyle }}
           onFocus={this.handleWrapperFocus}
         >
