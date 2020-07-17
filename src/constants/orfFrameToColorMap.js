@@ -1,7 +1,7 @@
 const orfFrameToColorMap = {
-  0: "#FF4040",
-  1: "#5E8804",
-  2: "#17569B"
+  0: "#FC5656",
+  1: "#37E97C",
+  2: "#56a9fc"
 };
 export default orfFrameToColorMap;
 
