@@ -11,6 +11,7 @@ export default props => {
     annotationVisibility: _annotationVisibility = {}
   } = props;
   const Component = _sequenceData.circular ? CircularView : LinearView;
+  const componentHandler = _sequenceData.circular ? "circularViewe" : "LinearView"
   const tickSpacing = _sequenceData.circular
     ? undefined
     : Math.floor(
@@ -53,7 +54,8 @@ export default props => {
           ...props,
           tickSpacing,
           annotationVisibility,
-          sequenceData
+          sequenceData,
+          componentHandler
         }}
       />
     </HoveredIdContext.Provider>

@@ -104,7 +104,8 @@ export class CircularView extends React.Component {
       selectionLayerRightClicked = noop,
       searchLayerClicked = noop,
       instantiated,
-      labelLineIntensity
+      labelLineIntensity,
+      componentHandler
     } = this.props;
     let { sequence = "atgc", circular } = sequenceData;
     let sequenceLength = sequence.length;
@@ -424,7 +425,7 @@ export class CircularView extends React.Component {
       <div
         style={{
           width: widthToUse,
-          height: heightToUse
+          height: heightToUse,
         }}
         // tabIndex="0"
         className="veCircularView"
@@ -462,7 +463,7 @@ export class CircularView extends React.Component {
                   position: "absolute",
                   width: "100%",
                   height: "100%",
-                  pointerEvents: "none"
+                  pointerEvents: "none",
                 }}
               >
                 <div
@@ -497,9 +498,9 @@ export class CircularView extends React.Component {
                   backgroundRightClicked
                 );
               }}
-              style={{ overflow: "visible", display: "block" }}
-              width={widthToUse}
-              height={heightToUse}
+              style={{ overflow: "visible", display: "block", margin:"auto" }}
+              width={widthToUse * 0.9}
+              height={heightToUse * 0.9}
               ref="circularView"
               className="circularViewSvg"
               viewBox={`-${radius * scale} -${radius * scale} ${

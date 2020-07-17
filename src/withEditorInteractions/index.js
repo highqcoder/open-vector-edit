@@ -1082,7 +1082,7 @@ function VectorInteractionHOC(Component /* options */) {
         <div
           tabIndex={0} //this helps with focusing using Keyboard's parentElement.focus()
           ref={(c) => (this.node = c)}
-          className={`veVectorInteractionWrapper`}
+          className={`veVectorInteractionWrapper ${``}`}
           style={{ position: "relative", ...vectorInteractionWrapperStyle }}
           onFocus={this.handleWrapperFocus}
         >
