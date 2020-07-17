@@ -141,6 +141,9 @@
   background-color: #eef1fa;
   outline: none;
 }
+.bp3-dark .veCircularView{
+  background-color: #070714;
+}
 
 @keyframes blinker {
   50% {
