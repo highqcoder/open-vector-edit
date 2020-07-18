@@ -109,7 +109,8 @@ class Sequence extends React.Component {
                   key={i}
                   className={
                     "ve-monospace-font " +
-                    (isReverse ? " ve-sequence-reverse" : "")
+                    (isReverse ? " ve-sequence-reverse" : "") +
+                    (!isReverse ? " ve-sequence-forward" : "")
                   }
                   {...{
                     // x: i * chunkWidth + i/2 * charWidth ,
@@ -149,7 +150,8 @@ class Sequence extends React.Component {
               <text
                 className={
                   "ve-monospace-font " +
-                  (isReverse ? " ve-sequence-reverse" : "")
+                  (isReverse ? " ve-sequence-reverse" : "") +
+                  (!isReverse ? " ve-sequence-forward" : "")
                 }
                 {...{
                   x: 0 + fudge / 2,
