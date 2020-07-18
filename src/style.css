@@ -6,7 +6,8 @@ text .ve-monospace-font {
 }
 
 .ve-sequence-reverse {
-  fill: #b0b0b0;
+  fill: #C2C3D2;
+  font-family: "Inter" !important;
 }
 
 .veCircularView .ve-monospace-font {
@@ -78,7 +79,7 @@ html {
 body {
   /* font-family: "Inter black" !important; */
 }
- 
+
 text {
   font-family: "Inter black" !important;
 }
