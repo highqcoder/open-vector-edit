@@ -74,11 +74,19 @@ function Axis({
       <defs>
         <filter id="f1" x="0" y="0" width="200%" height="200%">
           <feOffset result="offOut" in="SourceGraphic" dx="5" dy="10" />
-          <feColorMatrix result = "matrixOut" in = "offOut" type = "matrix" values = "0.5 0 0 0 0 0 0.4 0 0 0 0 0 0.6 0 0 0 0 0 0.3 0"/>
+          <feColorMatrix class = "circle " result = "matrixOut" in = "offOut" type = "matrix"
+            values = "0.5 0 0 0 0 0 0.4 0 0 0 0 0 0.6 0 0 0 0 0 0.9 0"
+          />
           <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
           <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
         </filter>
       </defs>
+      
+      <g fill="#eaedf7" stroke-width="5">
+        <circle
+          r = {radiusToUse + 60}
+        />
+      </g>
       <circle
         filter="url(#f1)"
         className="veAxisFill"

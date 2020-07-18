@@ -218,6 +218,12 @@ function drawAnnotations({
         fill="#7dbcff"
       >
         {svgGroup}
+        <div className = "asdfasdfasdfasdfasf" style = {{
+          backgroundColor : "red",
+          width : "500px",
+          height :"500px",
+          zIndex: 100000
+        }}></div>
       </g>
     ),
     height: maxYOffset * totalAnnotationHeight + 0.5 * annotationHeight,
