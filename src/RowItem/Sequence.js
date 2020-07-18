@@ -158,7 +158,7 @@ class Sequence extends React.Component {
                   lengthAdjust: "spacing"
                 }}
               >
-                {sequence}
+                {sequence.toLowerCase()}
               </text>
             </svg>
           )}
