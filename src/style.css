@@ -5,6 +5,11 @@ text .ve-monospace-font {
   font-size: 12px;
 }
 
+.ve-sequence-forward  {
+  fill: #50515C;
+  font-family: "Inter" !important;
+}
+
 .ve-sequence-reverse {
   fill: #C2C3D2;
   font-family: "Inter" !important;
