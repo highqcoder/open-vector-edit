@@ -7,6 +7,7 @@ import { divideBy3 } from "../utils/proteinUtils";
 
 function Axis({
   radius,
+  color = "red",
   sequenceLength,
   rotationRadians,
   showAxisNumbers,
@@ -82,9 +83,14 @@ function Axis({
         </filter>
       </defs>
       
-      <g fill="#eaedf7" stroke-width="5">
+      <g id="bigRing" stroke-width="5">
         <circle
-          r = {radiusToUse + 60}
+          r = {radiusToUse + 80}
+        />
+      </g>
+      <g id ="thickRing" stroke-width="5">
+        <circle
+          r = {radiusToUse + 5}
         />
       </g>
       <circle
@@ -94,15 +100,42 @@ function Axis({
         key="circleOuter"
         r={radiusToUse + ringThickness}
       />
-      {/* <circle
-        id="circularViewAxis"
-        key="circle"
-        r={radiusToUse}
-        style={{ fill: "white", stroke: "black", strokeWidth: 0.5 }}
-      /> */}
+      <g 
+        fill={color} 
+        stroke-width="5"
+      >
+        <defs>
+          <filter id="f1" x="0" y="0" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+        </defs>
+        <circle
+          id="circularViewAxis"
+          key="circle"
+          r={radiusToUse - 25}
+          filter = "url(#f1)"
+          style={{ fill: "white" }}
+        />
+      </g>
+      <g 
+        fill={color} 
+        stroke-width="5"
+      >
+        <circle
+          id="circularViewAxis"
+          key="circle"
+          r={radiusToUse - 25}
+          filter = "url(#f1)"
+          style={{ fill: {color}}}
+        />
+      </g>
+
       {tickMarksAndLabels}
     </g>
   );
+  console.log("---  color  ---", color)
   return {
     component,
     height

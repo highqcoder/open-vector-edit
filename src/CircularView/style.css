@@ -34,3 +34,20 @@
 .veHideLabels .veLabels {
   display: none;
 }
+
+#bigRing {
+  fill : #eaedf7
+}
+.bp3-dark #bigRing {
+  fill: #070714 !important
+}
+#thickRing {
+  stroke :#d6d1ec
+}
+.bp3-dark #thickRing {
+  stroke : #060610 !important
+}
+
+.veAnnotations-feature:first-child g {
+  transform: none !important;
+}

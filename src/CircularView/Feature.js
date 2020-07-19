@@ -38,12 +38,14 @@ export default function Feature({
     arrowheadLength,
     tailThickness: 1 //feature specific
   });
+
   return (
     <path
       {...cleanedRest}
       className="veFeature veCircularViewFeature"
       strokeWidth=".5"
       stroke="black"
+      filter="url(#f3)"
       fill={`url(#${color})`}
       d={path.print()}
     />

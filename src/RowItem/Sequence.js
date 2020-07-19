@@ -102,7 +102,6 @@ class Sequence extends React.Component {
               const x = i * chunkWidth;
 
               if (x > visibleEnd || x + textLength < visibleStart) return null;
-              console.log("-------------------------------", seqChunk)
 
               return (
                 <text

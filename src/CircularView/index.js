@@ -31,7 +31,7 @@ import { upperFirst, map } from "lodash";
 
 import UncontrolledSliderWithPlusMinusBtns from "../helperComponents/UncontrolledSliderWithPlusMinusBtns";
 
-function noop() {}
+function noop() { }
 
 // function toDegrees(radians) {
 //     return radians / 2 / Math.PI * 360
@@ -55,9 +55,9 @@ export class CircularView extends React.Component {
       sequenceLength === 0
         ? 0
         : normalizePositionByRangeLength(
-            getPositionFromAngle(angle, sequenceLength, true),
-            sequenceLength
-          ); //true because we're in between positions
+          getPositionFromAngle(angle, sequenceLength, true),
+          sequenceLength
+        ); //true because we're in between positions
     if (this.props.sequenceData && this.props.sequenceData.isProtein) {
       nearestCaretPos = Math.round(nearestCaretPos / 3) * 3;
     }
@@ -115,8 +115,8 @@ export class CircularView extends React.Component {
       (sequenceLength < 10
         ? 1
         : sequenceLength < 50
-        ? Math.ceil(sequenceLength / 5)
-        : Math.ceil(sequenceLength / 100) * 10);
+          ? Math.ceil(sequenceLength / 5)
+          : Math.ceil(sequenceLength / 100) * 10);
 
     const baseRadius = 80;
     let innerRadius = baseRadius - annotationHeight / 2; //tnr: -annotationHeight/2 because features are drawn from the center
@@ -146,6 +146,7 @@ export class CircularView extends React.Component {
         Comp: Axis,
         showAxisNumbers: !(annotationVisibility.axisNumbers === false),
         circularAndLinearTickSpacing,
+        sequenceData,
         spaceBefore: 0,
         spaceAfter: 0
       },
@@ -286,9 +287,9 @@ export class CircularView extends React.Component {
             maxAnnotationsToDisplay[layerName] || maxToDisplay || 50;
           let [annotations, paredDown] = isAnnotation
             ? pareDownAnnotations(
-                sequenceData["filtered" + nameUpper] || sequenceData[layerName],
-                maxToShow
-              )
+              sequenceData["filtered" + nameUpper] || sequenceData[layerName],
+              maxToShow
+            )
             : [];
 
           if (paredDown) {
@@ -320,14 +321,14 @@ export class CircularView extends React.Component {
           });
         }
         if (results) {
-          // //update the radius, labels, and svg
+          //update the radius, labels, and svg
           radius += results.height || 0;
           //tnr: we had been storing labels as a keyed-by-id object but that caused parts and features with the same id to override eachother
           labels = [...map(labels), ...map(results.labels || {})];
           comp = results.component || results;
         }
         radius += spaceAfter;
-        // console.warn('radius after draw:',JSON.stringify(radius,null,4))
+        //console.warn('radius after draw:',JSON.stringify(radius,null,4))
         return {
           result: comp,
           zIndex
@@ -343,7 +344,7 @@ export class CircularView extends React.Component {
     ) {
       return arr.concat(result);
     },
-    []);
+      []);
 
     //debug hash marks
     // annotationsSvgs = annotationsSvgs.concat([0,50,100,150,190].map(function (pos) {
@@ -498,14 +499,14 @@ export class CircularView extends React.Component {
                   backgroundRightClicked
                 );
               }}
-              style={{ overflow: "visible", display: "block", margin:"auto" }}
+              style={{ overflow: "visible", display: "block", margin: "auto" }}
               width={widthToUse * 0.9}
               height={heightToUse * 0.9}
               ref="circularView"
               className="circularViewSvg"
               viewBox={`-${radius * scale} -${radius * scale} ${
                 radius * 2 * scale
-              } ${radius * 2 * scale}`}
+                } ${radius * 2 * scale}`}
             >
               {annotationsSvgs}
             </svg>

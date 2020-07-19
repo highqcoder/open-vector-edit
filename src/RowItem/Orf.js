@@ -55,7 +55,7 @@ function Orf(props) {
       });
     }
   );
-  console.log("=======  width  =======", (width -gapsInside-charWidth)/70)
+
   return (
     <g
       onClick={function(event) {

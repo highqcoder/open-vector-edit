@@ -218,12 +218,6 @@ function drawAnnotations({
         fill="#7dbcff"
       >
         {svgGroup}
-        <div className = "asdfasdfasdfasdfasf" style = {{
-          backgroundColor : "red",
-          width : "500px",
-          height :"500px",
-          zIndex: 100000
-        }}></div>
       </g>
     ),
     height: maxYOffset * totalAnnotationHeight + 0.5 * annotationHeight,
@@ -263,6 +257,7 @@ const DrawAnnotation = withHover(function ({
     onMouseLeave,
     onMouseOver
   };
+
   const title = <title>{titleText}</title>;
   let annotationColorDec = []
   for (let i = 0; i < 3; i++) {
@@ -273,9 +268,11 @@ const DrawAnnotation = withHover(function ({
   return (
   <React.Fragment>
     <defs>
+      {/* <filter id="f3" x="20%" y="20%" width="100%" height="100%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+        <feDropShadow stdDeviation="10 10" in="SourceGraphic" dx="0" dy="0" flood-color="blue" flood-opacity="1" x="0%" y="0%" width="100%" height="100%" result="dropShadow"/>
+      </filter> */}
       <linearGradient id={annotationColor} x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style={{ "stop-color": `${annotationColor}`, "stop-opacity": 1 }} />
-
+        <stop offset="0%" style={{ "stop-color": `${annotationColor}`, "stop-opacity": 1 }} />
         <stop offset="100%" style={{ "stop-color": `rgb(${annotationColorDec[0]},${annotationColorDec[1]},${annotationColorDec[2]})`, "stop-opacity": 1 }} />
       </linearGradient>
     </defs>
