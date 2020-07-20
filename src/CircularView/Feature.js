@@ -40,14 +40,16 @@ export default function Feature({
   });
 
   return (
-    <path
-      {...cleanedRest}
-      className="veFeature veCircularViewFeature"
-      strokeWidth=".5"
-      stroke="black"
-      filter="url(#f3)"
-      fill={`url(#${color})`}
-      d={path.print()}
-    />
+    <g>
+      <path
+        {...cleanedRest}
+        className="veFeature veCircularViewFeature"
+        strokeWidth=".5"
+        stroke="black"
+        filter="url(#f3)"
+        fill={`url(#${color})`}
+        d={path.print()}
+      />
+    </g>
   );
 }

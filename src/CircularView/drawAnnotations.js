@@ -275,6 +275,9 @@ const DrawAnnotation = withHover(function ({
         <stop offset="0%" style={{ "stop-color": `${annotationColor}`, "stop-opacity": 1 }} />
         <stop offset="100%" style={{ "stop-color": `rgb(${annotationColorDec[0]},${annotationColorDec[1]},${annotationColorDec[2]})`, "stop-opacity": 1 }} />
       </linearGradient>
+      <filter id="dropshadow" x="-2" y="-2" width="200" height="200">
+        <feGaussianBlur  stdDeviation="1"/>
+      </filter>
     </defs>
     <g
       {...PositionAnnotationOnCircle({
