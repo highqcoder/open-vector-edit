@@ -130,7 +130,6 @@ function Axis({
           id="circularViewAxis"
           key="circle"
           r={radiusToUse - 25}
-          filter = "url(#f1)"
           style={{ fill: "white"}}
         />
       </g>

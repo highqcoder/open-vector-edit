@@ -8,6 +8,10 @@
   overflow-x: auto;
 }
 
+.bp3-dark .veStatusBar {
+  background: #0e0e22;
+}
+
 .veStatusBar::-webkit-scrollbar {
   display: none;
 }

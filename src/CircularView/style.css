@@ -18,7 +18,10 @@
 }
 
 #circularViewAxis{
-  fill: #eceafa
+  fill: #eceafa;
+}
+.bp3-dark #circularViewAxis {
+  filter: url(#f1)
 }
 
 .bp3-dark #circularViewAxis {
