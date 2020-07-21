@@ -118,7 +118,7 @@ class GeneralProperties extends React.Component {
         )}
         <div className="ve-flex-row">
           <div className="ve-column-left">
-            <div>Description:</div>
+            Description:
           </div>
           <div className="ve-column-right">
             <textarea

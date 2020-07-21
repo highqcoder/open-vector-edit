@@ -8,10 +8,15 @@
 } */
 .veFindBar > .bp3-control {
   margin-bottom: 0px;
+
 }
 .veFindBar > * {
   margin-right: 10px;
   width: fit-content;
+}
+
+label > * {
+  color: white !important;
 }
 
 .ve-find-options-popover > * {

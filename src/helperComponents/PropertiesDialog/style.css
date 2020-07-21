@@ -212,10 +212,23 @@
   background-color: #f1efff;
   color : #7100ff;
 }
-.bp3-dark .bp3-tag {
-  background-color: #200c58;
-  color : #923cff;
+.data-table-title-and-buttons > label > span {
+  color: #161616 !important;
 }
+.bp3-dark .data-table-title-and-buttons > label > span {
+  color : white !important 
+}
+
+.bp3-dark .data-table-title-and-buttons > label > span > * {
+  background-color : #200c58 !important ;
+}
+
+.bp3-dark .bp3-tag span {
+  color : white;
+
+}
+
+
 .bp3-dark .ReactTable .rt-thead.-header {
   color: #4f4f8a !important;
 }
@@ -237,6 +250,9 @@
 .ve-column-left{
   width: 50% !important;
 }
+.bp3-dark .ve-column-left  {
+  color: white !important;
+}
 .ve-column-right {
   float: left !important;
 }
@@ -252,4 +268,47 @@
   background-color: #f5f6fc;
   border-radius: 7px;
   border: none;
+}
+
+.ve_Select_genbank {
+  width: auto;
+  padding: 8px 20px 8px 10px;
+  margin-right: 5px;
+  background-color: #f5f6fc;
+  border-radius: 7px;
+  border: none;
+}
+
+.bp3-dark .ve_Select_genbank {
+  background-color: #1b1b37;
+}
+
+.bp3-dark .ve_Select_genbank {
+  color: white !important;
+}
+
+.bp3-dark .ve_Select {
+  background-color: #1b1b37;
+  color: #4f4f8a;
+}
+.bp3-dark textarea {
+  background-color: #1b1b37 !important;
+  color: #4f4f8a;
+}
+.bp3-dark .tg-cell-wrapper {
+  color: white !important;
+}
+.bp3-dark .tg-cell-wrapper > * {
+  color : white !important
+}
+.bp3-dark span {
+  color: white;
+}
+
+.bp3-dark .bp3-control {
+  color : white !important
+}
+
+.bp3-dark textarea {
+  color: white;
 }

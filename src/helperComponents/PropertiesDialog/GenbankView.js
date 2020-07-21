@@ -34,7 +34,7 @@ class GenbankView extends React.Component {
     return (
       <div className="genbankFileView">
         <select
-          className = "ve_Select"
+          className = "ve_Select_genbank"
           fill={false}
           onChange={e => {
             this.setState({ fileTypeToView: e.target.value });
