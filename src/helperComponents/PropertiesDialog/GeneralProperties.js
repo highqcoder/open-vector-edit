@@ -39,12 +39,12 @@ class GeneralProperties extends React.Component {
         <div className="ve-flex-row">
           <div className="ve-column-left">Name:</div>{" "}
           <div className="ve-column-right">
-            <InputField
+            <input
+              className = "ve_Select"
               disabled={readOnly}
               onFieldSubmit={val => {
                 sequenceNameUpdate(val);
               }}
-              className = "nameDescription"
               name="name"
               enableReinitialize
               defaultValue={name}
@@ -56,17 +56,17 @@ class GeneralProperties extends React.Component {
             <div className="ve-column-left">Circular/Linear:</div>{" "}
             <div className="ve-column-right">
               {" "}
-              <BPSelect
+              <select
+                className = "ve_Select"
                 disabled={readOnly}
                 onChange={val => {
                   updateCircular(val === "circular");
                 }}
                 value={circular ? "circular" : "linear"}
-                options={[
-                  { label: "Circular", value: "circular" },
-                  { label: "Linear", value: "linear" }
-                ]}
-              />
+              >
+                <option label = "Circular" value = "circular"></option>
+                <option label = "Linear" value = "linear"></option>
+              </select>
             </div>
           </div>
         )}
@@ -76,17 +76,17 @@ class GeneralProperties extends React.Component {
             <div className="ve-column-left">Material Availability:</div>{" "}
             <div className="ve-column-right">
               {" "}
-              <BPSelect
+              <select
+                className = "ve_Select"
                 disabled={readOnly}
                 onChange={val => {
                   updateAvailability(val === "available");
                 }}
                 value={materiallyAvailable ? "available" : "unavailable"}
-                options={[
-                  { label: "Available", value: "available" },
-                  { label: "Unavailable", value: "unavailable" }
-                ]}
-              />
+              >
+                <option label = "Available" value = "available"></option>
+                <option label = "Unavailable" value = "unavailable"></option>               
+              </select>
             </div>
           </div>
         )}
@@ -102,17 +102,17 @@ class GeneralProperties extends React.Component {
             <div className="ve-column-left">Is Editable:</div>{" "}
             <div className="ve-column-right">
               {" "}
-              <BPSelect
+              <select
+                className = "ve_Select"
                 disabled={!onSave || disableSetReadOnly}
                 onChange={val => {
                   updateReadOnlyMode(val === "readOnly");
                 }}
                 value={readOnly ? "readOnly" : "editable"}
-                options={[
-                  { label: "Read Only", value: "readOnly" },
-                  { label: "Editable", value: "editable" }
-                ]}
-              />
+              >
+                <option label = "Read Only" value = "readOnly"></option>
+                <option label = "Editable" value = "editable"></option>             
+              </select>  
             </div>
           </div>
         )}
@@ -121,8 +121,12 @@ class GeneralProperties extends React.Component {
             <div>Description:</div>
           </div>
           <div className="ve-column-right">
-            <TextareaField
+            <textarea
               clickToEdit
+              style = {{
+                width: "250px",
+                backgroundColor : "#f5f6fc"
+              }}
               className = "description"
               name="description"
               onFieldSubmit={this.updateSeqDesc}

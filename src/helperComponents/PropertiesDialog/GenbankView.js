@@ -33,17 +33,17 @@ class GenbankView extends React.Component {
 
     return (
       <div className="genbankFileView">
-        <HTMLSelect
+        <select
+          className = "ve_Select"
           fill={false}
-          options={[
-            { label: "Genbank", value: "genbank" },
-            { label: "Fasta", value: "fasta" },
-            { label: "Teselagen JSON", value: "teselagen" }
-          ]}
           onChange={e => {
             this.setState({ fileTypeToView: e.target.value });
           }}
-        />
+        >
+          <option label = "Genbank" value = "genbank"></option>
+          <option label = "Fasta" value = "fasta"></option>
+          <option label = "Teselagen JSON" value = "teselagen"></option>
+        </select>
         <textarea
           data-test="ve-genbank-text"
           readOnly

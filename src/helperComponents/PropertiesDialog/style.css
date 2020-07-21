@@ -50,6 +50,7 @@
 }
 .ve-propertiesPanel .bp3-tab-list {
   overflow: scroll;
+  width: 550px;
 }
 .ve-propertiesPanel .bp3-tabs .bp3-tab-panel {
   padding: 20px;
@@ -59,6 +60,22 @@
   overflow-x: visible;
 }
 
+.button_virtual {
+  border-radius: 7px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.button_virtual:hover {
+  background-color: #f5f6fc ;
+}
+.bp3-dark .button_virtual {
+  background-color: #5600ff;
+  color: white !important;
+}
+.bp3-dark .button_virtual:hover {
+  background-color: #4000bf;
+  color: white !important;
+}
 .ve-flex-row {
   display: flex;
   flex-direction: row;
@@ -226,4 +243,13 @@
 
 .bp3-form-group .description .tg-test-description > .bp3-dark .bp3-button:not([class*="bp3-intent-"]) {
   background-color: red !important;
+}
+
+.ve_Select {
+  width: auto;
+  padding: 8px 20px 8px 10px;
+  margin-right: 5px;
+  background-color: #f5f6fc;
+  border-radius: 7px;
+  border: none;
 }

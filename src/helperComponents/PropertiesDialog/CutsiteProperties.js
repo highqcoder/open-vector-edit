@@ -168,14 +168,15 @@ class CutsiteProperties extends React.Component {
             onChangeHook={this.onChangeHook}
           />
 
-          <Button
+          <div
+            className = "button_virtual"
             style={{ marginLeft: 15, flexGrow: -1 }}
             onClick={() => {
               createNewDigest();
             }}
           >
             Virtual Digest
-          </Button>
+          </div>
         </div>
         <DataTable
           selectedIds={get(

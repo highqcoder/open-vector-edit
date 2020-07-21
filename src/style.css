@@ -84,6 +84,12 @@ html {
 body {
   /* font-family: "Inter black" !important; */
 }
+button {
+  border: none !important;
+}
+select {
+  border: none !important;
+}
 
 text {
   font-family: "Inter black" !important;
